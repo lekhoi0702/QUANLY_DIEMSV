@@ -184,12 +184,6 @@
     <Compile Include="reportForm\reportSinhVienDangKy.Designer.cs">
       <DependentUpon>reportSinhVienDangKy.cs</DependentUpon>
     </Compile>
-    <Compile Include="report\rptBangDiemTongKet.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="report\rptBangDiemTongKet.Designer.cs">
-      <DependentUpon>rptBangDiemTongKet.cs</DependentUpon>
-    </Compile>
     <Compile Include="report\rptDanhSachDongHocPhi.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -219,6 +213,12 @@
     </Compile>
     <Compile Include="report\rptDiemSinhVien.Designer.cs">
       <DependentUpon>rptDiemSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\rptBangDiemTongKet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\rptBangDiemTongKet.Designer.cs">
+      <DependentUpon>rptBangDiemTongKet.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="form\frmDiemSinhVien.resx">
       <DependentUpon>frmDiemSinhVien.cs</DependentUpon>
@@ -282,9 +282,6 @@
     <EmbeddedResource Include="reportForm\reportSinhVienDangKy.resx">
       <DependentUpon>reportSinhVienDangKy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="report\rptBangDiemTongKet.resx">
-      <DependentUpon>rptBangDiemTongKet.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="report\rptDanhSachDongHocPhi.resx">
       <DependentUpon>rptDanhSachDongHocPhi.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="report\rptDiemSinhVien.resx">
       <DependentUpon>rptDiemSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\rptBangDiemTongKet.resx">
+      <DependentUpon>rptBangDiemTongKet.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

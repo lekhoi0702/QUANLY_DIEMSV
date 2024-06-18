@@ -30,11 +30,11 @@ namespace QLDSV_TC
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLopHoc));
             System.Windows.Forms.Label mAKHOALabel;
             System.Windows.Forms.Label kHOAHOCLabel;
             System.Windows.Forms.Label tENLOPLabel;
             System.Windows.Forms.Label mALOPLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLopHoc));
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
@@ -67,14 +67,8 @@ namespace QLDSV_TC
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txbMaKhoa = new System.Windows.Forms.TextBox();
             this.bdsLOP = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet = new QLDSV_TC.QLDSV_TCDataSet();
-            this.txbKhoaHoc = new System.Windows.Forms.TextBox();
-            this.txbTenLop = new System.Windows.Forms.TextBox();
-            this.txbMaLop = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cbKhoa = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -88,6 +82,11 @@ namespace QLDSV_TC
             this.colKHOAHOC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKHOA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.bdsSINHVIEN = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txbMaKhoa = new System.Windows.Forms.TextBox();
+            this.txbKhoaHoc = new System.Windows.Forms.TextBox();
+            this.txbTenLop = new System.Windows.Forms.TextBox();
+            this.txbMaLop = new System.Windows.Forms.TextBox();
             mAKHOALabel = new System.Windows.Forms.Label();
             kHOAHOCLabel = new System.Windows.Forms.Label();
             tENLOPLabel = new System.Windows.Forms.Label();
@@ -95,55 +94,14 @@ namespace QLDSV_TC
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bdsLOP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcLOP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsSINHVIEN)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // mAKHOALabel
-            // 
-            mAKHOALabel.AutoSize = true;
-            mAKHOALabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            mAKHOALabel.Location = new System.Drawing.Point(936, 75);
-            mAKHOALabel.Name = "mAKHOALabel";
-            mAKHOALabel.Size = new System.Drawing.Size(102, 22);
-            mAKHOALabel.TabIndex = 6;
-            mAKHOALabel.Text = "MÃ KHOA";
-            // 
-            // kHOAHOCLabel
-            // 
-            kHOAHOCLabel.AutoSize = true;
-            kHOAHOCLabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            kHOAHOCLabel.Location = new System.Drawing.Point(665, 75);
-            kHOAHOCLabel.Name = "kHOAHOCLabel";
-            kHOAHOCLabel.Size = new System.Drawing.Size(114, 22);
-            kHOAHOCLabel.TabIndex = 4;
-            kHOAHOCLabel.Text = "KHOÁ HỌC";
-            // 
-            // tENLOPLabel
-            // 
-            tENLOPLabel.AutoSize = true;
-            tENLOPLabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tENLOPLabel.Location = new System.Drawing.Point(277, 75);
-            tENLOPLabel.Name = "tENLOPLabel";
-            tENLOPLabel.Size = new System.Drawing.Size(94, 22);
-            tENLOPLabel.TabIndex = 2;
-            tENLOPLabel.Text = "TÊN LỚP";
-            // 
-            // mALOPLabel
-            // 
-            mALOPLabel.AutoSize = true;
-            mALOPLabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            mALOPLabel.Location = new System.Drawing.Point(6, 75);
-            mALOPLabel.Name = "mALOPLabel";
-            mALOPLabel.Size = new System.Drawing.Size(85, 22);
-            mALOPLabel.TabIndex = 0;
-            mALOPLabel.Text = "MÃ LỚP";
             // 
             // bar2
             // 
@@ -439,50 +397,14 @@ namespace QLDSV_TC
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.panel1);
+            this.panelControl1.Controls.Add(this.groupBox1);
             this.panelControl1.Controls.Add(this.panel2);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 51);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(6, 2, 6, 2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1820, 294);
+            this.panelControl1.Size = new System.Drawing.Size(1820, 92);
             this.panelControl1.TabIndex = 5;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(428, 30);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1390, 262);
-            this.panel1.TabIndex = 7;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.txbMaKhoa);
-            this.groupBox1.Controls.Add(mAKHOALabel);
-            this.groupBox1.Controls.Add(kHOAHOCLabel);
-            this.groupBox1.Controls.Add(this.txbKhoaHoc);
-            this.groupBox1.Controls.Add(tENLOPLabel);
-            this.groupBox1.Controls.Add(this.txbTenLop);
-            this.groupBox1.Controls.Add(mALOPLabel);
-            this.groupBox1.Controls.Add(this.txbMaLop);
-            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(0, 19);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1392, 243);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "THÔNG TIN LỚP";
-            // 
-            // txbMaKhoa
-            // 
-            this.txbMaKhoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsLOP, "MAKHOA", true));
-            this.txbMaKhoa.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMaKhoa.Location = new System.Drawing.Point(1044, 69);
-            this.txbMaKhoa.Name = "txbMaKhoa";
-            this.txbMaKhoa.Size = new System.Drawing.Size(274, 28);
-            this.txbMaKhoa.TabIndex = 8;
             // 
             // bdsLOP
             // 
@@ -494,33 +416,6 @@ namespace QLDSV_TC
             this.dataSet.DataSetName = "QLDSV_TCDataSet";
             this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // txbKhoaHoc
-            // 
-            this.txbKhoaHoc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsLOP, "KHOAHOC", true));
-            this.txbKhoaHoc.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbKhoaHoc.Location = new System.Drawing.Point(786, 69);
-            this.txbKhoaHoc.Name = "txbKhoaHoc";
-            this.txbKhoaHoc.Size = new System.Drawing.Size(144, 28);
-            this.txbKhoaHoc.TabIndex = 5;
-            // 
-            // txbTenLop
-            // 
-            this.txbTenLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsLOP, "TENLOP", true));
-            this.txbTenLop.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTenLop.Location = new System.Drawing.Point(385, 69);
-            this.txbTenLop.Name = "txbTenLop";
-            this.txbTenLop.Size = new System.Drawing.Size(274, 28);
-            this.txbTenLop.TabIndex = 3;
-            // 
-            // txbMaLop
-            // 
-            this.txbMaLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsLOP, "MALOP", true));
-            this.txbMaLop.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMaLop.Location = new System.Drawing.Point(97, 72);
-            this.txbMaLop.Name = "txbMaLop";
-            this.txbMaLop.Size = new System.Drawing.Size(174, 28);
-            this.txbMaLop.TabIndex = 1;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.cbKhoa);
@@ -528,7 +423,7 @@ namespace QLDSV_TC
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(426, 290);
+            this.panel2.Size = new System.Drawing.Size(426, 88);
             this.panel2.TabIndex = 0;
             // 
             // cbKhoa
@@ -536,7 +431,7 @@ namespace QLDSV_TC
             this.cbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKhoa.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbKhoa.FormattingEnabled = true;
-            this.cbKhoa.Location = new System.Drawing.Point(107, 79);
+            this.cbKhoa.Location = new System.Drawing.Point(91, 41);
             this.cbKhoa.Margin = new System.Windows.Forms.Padding(6, 2, 6, 2);
             this.cbKhoa.Name = "cbKhoa";
             this.cbKhoa.Size = new System.Drawing.Size(244, 28);
@@ -547,7 +442,7 @@ namespace QLDSV_TC
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 79);
+            this.label1.Location = new System.Drawing.Point(13, 44);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 22);
@@ -579,12 +474,12 @@ namespace QLDSV_TC
             this.gcLOP.DataSource = this.bdsLOP;
             this.gcLOP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcLOP.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
-            this.gcLOP.Location = new System.Drawing.Point(0, 345);
+            this.gcLOP.Location = new System.Drawing.Point(0, 143);
             this.gcLOP.MainView = this.gridView1;
             this.gcLOP.Margin = new System.Windows.Forms.Padding(6);
             this.gcLOP.MenuManager = this.barManager1;
             this.gcLOP.Name = "gcLOP";
-            this.gcLOP.Size = new System.Drawing.Size(1820, 737);
+            this.gcLOP.Size = new System.Drawing.Size(1820, 939);
             this.gcLOP.TabIndex = 7;
             this.gcLOP.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -690,6 +585,101 @@ namespace QLDSV_TC
             this.bdsSINHVIEN.DataMember = "FK_SINHVIEN_LOP";
             this.bdsSINHVIEN.DataSource = this.bdsLOP;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txbMaKhoa);
+            this.groupBox1.Controls.Add(mAKHOALabel);
+            this.groupBox1.Controls.Add(kHOAHOCLabel);
+            this.groupBox1.Controls.Add(this.txbKhoaHoc);
+            this.groupBox1.Controls.Add(tENLOPLabel);
+            this.groupBox1.Controls.Add(this.txbTenLop);
+            this.groupBox1.Controls.Add(mALOPLabel);
+            this.groupBox1.Controls.Add(this.txbMaLop);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(428, 2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1390, 88);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "THÔNG TIN LỚP";
+            // 
+            // txbMaKhoa
+            // 
+            this.txbMaKhoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsLOP, "MAKHOA", true));
+            this.txbMaKhoa.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbMaKhoa.Location = new System.Drawing.Point(1047, 35);
+            this.txbMaKhoa.Name = "txbMaKhoa";
+            this.txbMaKhoa.Size = new System.Drawing.Size(274, 28);
+            this.txbMaKhoa.TabIndex = 8;
+            // 
+            // mAKHOALabel
+            // 
+            mAKHOALabel.AutoSize = true;
+            mAKHOALabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            mAKHOALabel.Location = new System.Drawing.Point(939, 41);
+            mAKHOALabel.Name = "mAKHOALabel";
+            mAKHOALabel.Size = new System.Drawing.Size(102, 22);
+            mAKHOALabel.TabIndex = 6;
+            mAKHOALabel.Text = "MÃ KHOA";
+            // 
+            // kHOAHOCLabel
+            // 
+            kHOAHOCLabel.AutoSize = true;
+            kHOAHOCLabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            kHOAHOCLabel.Location = new System.Drawing.Point(668, 41);
+            kHOAHOCLabel.Name = "kHOAHOCLabel";
+            kHOAHOCLabel.Size = new System.Drawing.Size(114, 22);
+            kHOAHOCLabel.TabIndex = 4;
+            kHOAHOCLabel.Text = "KHOÁ HỌC";
+            // 
+            // txbKhoaHoc
+            // 
+            this.txbKhoaHoc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsLOP, "KHOAHOC", true));
+            this.txbKhoaHoc.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbKhoaHoc.Location = new System.Drawing.Point(789, 35);
+            this.txbKhoaHoc.Name = "txbKhoaHoc";
+            this.txbKhoaHoc.Size = new System.Drawing.Size(144, 28);
+            this.txbKhoaHoc.TabIndex = 5;
+            // 
+            // tENLOPLabel
+            // 
+            tENLOPLabel.AutoSize = true;
+            tENLOPLabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tENLOPLabel.Location = new System.Drawing.Point(280, 41);
+            tENLOPLabel.Name = "tENLOPLabel";
+            tENLOPLabel.Size = new System.Drawing.Size(94, 22);
+            tENLOPLabel.TabIndex = 2;
+            tENLOPLabel.Text = "TÊN LỚP";
+            // 
+            // txbTenLop
+            // 
+            this.txbTenLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsLOP, "TENLOP", true));
+            this.txbTenLop.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTenLop.Location = new System.Drawing.Point(388, 35);
+            this.txbTenLop.Name = "txbTenLop";
+            this.txbTenLop.Size = new System.Drawing.Size(274, 28);
+            this.txbTenLop.TabIndex = 3;
+            // 
+            // mALOPLabel
+            // 
+            mALOPLabel.AutoSize = true;
+            mALOPLabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            mALOPLabel.Location = new System.Drawing.Point(9, 41);
+            mALOPLabel.Name = "mALOPLabel";
+            mALOPLabel.Size = new System.Drawing.Size(85, 22);
+            mALOPLabel.TabIndex = 0;
+            mALOPLabel.Text = "MÃ LỚP";
+            // 
+            // txbMaLop
+            // 
+            this.txbMaLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsLOP, "MALOP", true));
+            this.txbMaLop.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbMaLop.Location = new System.Drawing.Point(100, 38);
+            this.txbMaLop.Name = "txbMaLop";
+            this.txbMaLop.Size = new System.Drawing.Size(174, 28);
+            this.txbMaLop.TabIndex = 1;
+            // 
             // frmLopHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -710,9 +700,6 @@ namespace QLDSV_TC
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bdsLOP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -720,6 +707,8 @@ namespace QLDSV_TC
             ((System.ComponentModel.ISupportInitialize)(this.gcLOP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsSINHVIEN)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -771,14 +760,13 @@ namespace QLDSV_TC
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem btnSua1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ComboBox cbKhoa;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txbMaKhoa;
         private System.Windows.Forms.TextBox txbKhoaHoc;
         private System.Windows.Forms.TextBox txbTenLop;
         private System.Windows.Forms.TextBox txbMaLop;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox cbKhoa;
-        private System.Windows.Forms.Label label1;
     }
 }

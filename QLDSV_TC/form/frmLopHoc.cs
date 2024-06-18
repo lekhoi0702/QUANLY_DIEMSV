@@ -53,7 +53,7 @@ namespace QLDSV_TC
             {
                 cbKhoa.Enabled = false;
             }
-            panel1.Enabled = false;
+            groupBox1.Enabled = false;
             btnHuy.Enabled = false;
 
             txbMaKhoa.Enabled = false;
@@ -207,7 +207,7 @@ namespace QLDSV_TC
             dangthemmoi = true;
             vitri = bdsLOP.Position;
             _flagOptionLop = "ADD";
-            panel1.Enabled = true;
+            groupBox1.Enabled = true;
             bdsLOP.AddNew();
             txbMaKhoa.Text = macn;
             btnThem.Enabled = btnSua1.Enabled = btnXoa.Enabled = btnPhucHoi.Enabled = btnLamMoi.Enabled = btnSua1.Enabled =  false;
@@ -254,7 +254,7 @@ namespace QLDSV_TC
                 this.LOPTableAdapter.Fill(this.dataSet.LOP);
                 this.gcLOP.Enabled = true;
                 btnPhucHoi.Enabled =btnThem.Enabled=btnXoa.Enabled = true;
-                panel1.Enabled = false;
+                groupBox1.Enabled = false;
                 btnGhi.Enabled = false;
                 btnSua1.Enabled = true;
             }
@@ -380,7 +380,7 @@ namespace QLDSV_TC
                     gcLOP.Enabled = true;
                     btnGhi.Enabled = btnThem.Enabled = btnSua1.Enabled = btnXoa.Enabled = btnLamMoi.Enabled = btnPhucHoi.Enabled = true;
                     btnPhucHoi.Enabled = btnHuy.Enabled = false;
-                    panel1.Enabled = dangthemmoi = false;
+                    groupBox1.Enabled = dangthemmoi = false;
                     btnGhi.Enabled = false;
                 }
                     
@@ -404,7 +404,7 @@ namespace QLDSV_TC
             bdsLOP.CancelEdit();
          //   bdsLOP.RemoveCurrent();
             btnThem.Enabled = btnXoa.Enabled = btnLamMoi.Enabled = gcLOP.Enabled = true;
-            btnHuy.Enabled = panel1.Enabled = false;
+            btnHuy.Enabled = groupBox1.Enabled = false;
             btnGhi.Enabled = false;
             btnSua1.Enabled = true;
             bdsLOP.Position = vitri;
@@ -445,7 +445,7 @@ namespace QLDSV_TC
             undoList.Push(undoQuery);
 
             txbMaLop.Enabled = false;
-            panel1.Enabled = true;
+            groupBox1.Enabled = true;
             btnThem.Enabled = btnSua1.Enabled = btnXoa.Enabled = btnPhucHoi.Enabled=btnLamMoi.Enabled=cbKhoa.Enabled = false;
             btnGhi.Enabled = btnHuy.Enabled = true;
             gcLOP.Enabled = false;
