@@ -19,11 +19,11 @@ namespace QLDSV_TC
         private BindingSource bdsLopTinchi = new BindingSource();
 
 
-        
 
 
 
-       
+
+
         public frmDangKyMon()
         {
             InitializeComponent();
@@ -54,42 +54,42 @@ namespace QLDSV_TC
             Console.WriteLine("this is load " + cbNienKhoa.Text);
             cbNienKhoa.SelectedIndex = 0;
             this.btnDangKy.Visible = false;
-      
+
 
         }
 
 
-       /* private void btnSearchSinhVien_Click(object sender, EventArgs e)
-        {
-            if (txbMaSV.Text.Trim() == "")
-            {
-                MessageBox.Show("Mã sinh viên không được thiếu!", "", MessageBoxButtons.OK);
-                txbMaSV.Focus();
-                return;
-            }
-            if (txbMaSV.Text != Program.username)
-            {
-                MessageBox.Show("Bạn không phải là tài khoản sinh viên này!", "", MessageBoxButtons.OK);
-                txbMaSV.Focus();
-                return;
-            }
-           
-            //     string cmd = "EXEC dbo.SP_getInfoSVDKI '" + txbMaSV.Text + "'";
-            string cmd1 = "EXEC dbo.SP_LIST_SVHUYDANGKY '" + txbMaSV.Text + "'";
-            //   DataTable tableSV = Program.ExecSqlDataTable(cmd);
-            DataTable tableDSLTC_HUY = Program.ExecSqlDataTable(cmd1);
+        /* private void btnSearchSinhVien_Click(object sender, EventArgs e)
+         {
+             if (txbMaSV.Text.Trim() == "")
+             {
+                 MessageBox.Show("Mã sinh viên không được thiếu!", "", MessageBoxButtons.OK);
+                 txbMaSV.Focus();
+                 return;
+             }
+             if (txbMaSV.Text != Program.username)
+             {
+                 MessageBox.Show("Bạn không phải là tài khoản sinh viên này!", "", MessageBoxButtons.OK);
+                 txbMaSV.Focus();
+                 return;
+             }
 
-            //   this.bdsSinhVien.DataSource = tableSV;
-            this.bdsHUYDANGKY.DataSource = tableDSLTC_HUY;
-            //    this.SINHVIENgridControl.DataSource = this.bdsSinhVien;
-            this.gcHUYDANGKY.DataSource = this.bdsHUYDANGKY;
-           
-        }*/
+             //     string cmd = "EXEC dbo.SP_getInfoSVDKI '" + txbMaSV.Text + "'";
+             string cmd1 = "EXEC dbo.SP_LIST_SVHUYDANGKY '" + txbMaSV.Text + "'";
+             //   DataTable tableSV = Program.ExecSqlDataTable(cmd);
+             DataTable tableDSLTC_HUY = Program.ExecSqlDataTable(cmd1);
+
+             //   this.bdsSinhVien.DataSource = tableSV;
+             this.bdsHUYDANGKY.DataSource = tableDSLTC_HUY;
+             //    this.SINHVIENgridControl.DataSource = this.bdsSinhVien;
+             this.gcHUYDANGKY.DataSource = this.bdsHUYDANGKY;
+
+         }*/
 
 
         private void LoadSinhVienInfo()
         {
-    
+
 
             string cmd1 = "EXEC dbo.SP_LIST_SVHUYDANGKY '" + Program.username + "'";
             DataTable tableDSLTC_HUY = Program.ExecSqlDataTable(cmd1);
@@ -135,7 +135,14 @@ namespace QLDSV_TC
             this.gcLOPTINCHI.DataSource = this.bdsLopTinchi;
             this.btnDangKy.Visible = true;
         }
-
+        private void ReloadTable()
+        {
+            string cmd = "EXEC [dbo].[SP_InDanhSachLopTinChi] '" + cbNienKhoa.Text + "', '" + cbHocKi.Text + "'";
+            DataTable tableLopTC = Program.ExecSqlDataTable(cmd);
+            this.bdsLopTinchi.DataSource = tableLopTC;
+            this.gcLOPTINCHI.DataSource = this.bdsLopTinchi;
+            this.btnDangKy.Visible = true;
+        }
 
 
         void loadcbHocKi(string nienkhoa)
@@ -198,6 +205,7 @@ namespace QLDSV_TC
                     this.bdsHUYDANGKY.DataSource = tableDSLTC_HUY;
 
                     this.gcHUYDANGKY.DataSource = this.bdsHUYDANGKY;
+                    ReloadTable();
                 }
                 else
                 {
@@ -230,6 +238,7 @@ namespace QLDSV_TC
                     this.bdsHUYDANGKY.DataSource = tableDSLTC_HUY;
                     this.gcHUYDANGKY.DataSource = this.bdsHUYDANGKY;
                     this.gcLOPTINCHI.DataSource = this.bdsLopTinchi;
+                    ReloadTable();
                 }
                 else
                 {
