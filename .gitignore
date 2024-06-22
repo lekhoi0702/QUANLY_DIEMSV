@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+QLDSV_TC/Program.cs
+QLDSV_TC/QLDSV_TC.csproj
+QLDSV_TC/App.config
