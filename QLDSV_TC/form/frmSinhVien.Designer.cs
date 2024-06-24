@@ -36,8 +36,8 @@ namespace QLDSV_TC
             System.Windows.Forms.Label dIACHILabel;
             System.Windows.Forms.Label hOLabel;
             System.Windows.Forms.Label mASVLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSinhVien));
             System.Windows.Forms.Label pHAILabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSinhVien));
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
@@ -67,6 +67,7 @@ namespace QLDSV_TC
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbPhai = new System.Windows.Forms.CheckBox();
             this.bdsSINHVIEN = new System.Windows.Forms.BindingSource(this.components);
             this.bdsLOP = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet = new QLDSV_TC.QLDSV_TCDataSet();
@@ -92,7 +93,6 @@ namespace QLDSV_TC
             this.colNGAYSINH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMALOP1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDANGHIHOC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cbPhai = new System.Windows.Forms.CheckBox();
             dANGHIHOCLabel = new System.Windows.Forms.Label();
             mALOPLabel = new System.Windows.Forms.Label();
             nGAYSINHLabel = new System.Windows.Forms.Label();
@@ -121,7 +121,7 @@ namespace QLDSV_TC
             // 
             dANGHIHOCLabel.AutoSize = true;
             dANGHIHOCLabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dANGHIHOCLabel.Location = new System.Drawing.Point(972, 86);
+            dANGHIHOCLabel.Location = new System.Drawing.Point(972, 81);
             dANGHIHOCLabel.Name = "dANGHIHOCLabel";
             dANGHIHOCLabel.Size = new System.Drawing.Size(140, 22);
             dANGHIHOCLabel.TabIndex = 13;
@@ -176,6 +176,16 @@ namespace QLDSV_TC
             mASVLabel.Size = new System.Drawing.Size(144, 22);
             mASVLabel.TabIndex = 0;
             mASVLabel.Text = "MÃ SINH VIÊN";
+            // 
+            // pHAILabel
+            // 
+            pHAILabel.AutoSize = true;
+            pHAILabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            pHAILabel.Location = new System.Drawing.Point(1192, 42);
+            pHAILabel.Name = "pHAILabel";
+            pHAILabel.Size = new System.Drawing.Size(107, 22);
+            pHAILabel.TabIndex = 16;
+            pHAILabel.Text = "GIỚI TÍNH";
             // 
             // bar3
             // 
@@ -403,7 +413,7 @@ namespace QLDSV_TC
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(447, 118);
+            this.panel3.Size = new System.Drawing.Size(521, 118);
             this.panel3.TabIndex = 9;
             // 
             // label2
@@ -424,7 +434,7 @@ namespace QLDSV_TC
             this.cbLOP.FormattingEnabled = true;
             this.cbLOP.Location = new System.Drawing.Point(88, 66);
             this.cbLOP.Name = "cbLOP";
-            this.cbLOP.Size = new System.Drawing.Size(182, 28);
+            this.cbLOP.Size = new System.Drawing.Size(238, 28);
             this.cbLOP.TabIndex = 6;
             // 
             // cbKhoa
@@ -435,8 +445,9 @@ namespace QLDSV_TC
             this.cbKhoa.Location = new System.Drawing.Point(88, 16);
             this.cbKhoa.Margin = new System.Windows.Forms.Padding(5, 2, 5, 2);
             this.cbKhoa.Name = "cbKhoa";
-            this.cbKhoa.Size = new System.Drawing.Size(182, 28);
+            this.cbKhoa.Size = new System.Drawing.Size(238, 28);
             this.cbKhoa.TabIndex = 5;
+            this.cbKhoa.SelectedIndexChanged += new System.EventHandler(this.cbKhoa_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -453,9 +464,9 @@ namespace QLDSV_TC
             // 
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(449, 2);
+            this.panel1.Location = new System.Drawing.Point(523, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1489, 118);
+            this.panel1.Size = new System.Drawing.Size(1415, 118);
             this.panel1.TabIndex = 8;
             // 
             // panel2
@@ -464,7 +475,7 @@ namespace QLDSV_TC
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1489, 118);
+            this.panel2.Size = new System.Drawing.Size(1415, 118);
             this.panel2.TabIndex = 0;
             // 
             // groupBox1
@@ -488,10 +499,21 @@ namespace QLDSV_TC
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1489, 118);
+            this.groupBox1.Size = new System.Drawing.Size(1415, 118);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "THÔNG TIN SINH VIÊN";
+            // 
+            // cbPhai
+            // 
+            this.cbPhai.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bdsSINHVIEN, "PHAI", true));
+            this.cbPhai.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPhai.Location = new System.Drawing.Point(1305, 42);
+            this.cbPhai.Name = "cbPhai";
+            this.cbPhai.Size = new System.Drawing.Size(104, 24);
+            this.cbPhai.TabIndex = 17;
+            this.cbPhai.Text = "NAM";
+            this.cbPhai.UseVisualStyleBackColor = true;
             // 
             // bdsSINHVIEN
             // 
@@ -512,7 +534,7 @@ namespace QLDSV_TC
             // 
             this.cbDangNghiHoc.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bdsSINHVIEN, "DANGHIHOC", true));
             this.cbDangNghiHoc.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDangNghiHoc.Location = new System.Drawing.Point(1118, 85);
+            this.cbDangNghiHoc.Location = new System.Drawing.Point(1118, 81);
             this.cbDangNghiHoc.Name = "cbDangNghiHoc";
             this.cbDangNghiHoc.Size = new System.Drawing.Size(30, 24);
             this.cbDangNghiHoc.TabIndex = 14;
@@ -531,7 +553,7 @@ namespace QLDSV_TC
             // 
             this.dteNgaySinh.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSINHVIEN, "NGAYSINH", true));
             this.dteNgaySinh.EditValue = null;
-            this.dteNgaySinh.Location = new System.Drawing.Point(760, 83);
+            this.dteNgaySinh.Location = new System.Drawing.Point(760, 77);
             this.dteNgaySinh.MenuManager = this.barManager1;
             this.dteNgaySinh.Name = "dteNgaySinh";
             this.dteNgaySinh.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -542,6 +564,7 @@ namespace QLDSV_TC
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dteNgaySinh.Size = new System.Drawing.Size(206, 26);
             this.dteNgaySinh.TabIndex = 11;
+            this.dteNgaySinh.EditValueChanged += new System.EventHandler(this.dteNgaySinh_EditValueChanged);
             // 
             // txbDiaChi
             // 
@@ -556,7 +579,7 @@ namespace QLDSV_TC
             // 
             this.txbTen.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsSINHVIEN, "TEN", true));
             this.txbTen.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTen.Location = new System.Drawing.Point(386, 78);
+            this.txbTen.Location = new System.Drawing.Point(386, 75);
             this.txbTen.Name = "txbTen";
             this.txbTen.Size = new System.Drawing.Size(210, 28);
             this.txbTen.TabIndex = 5;
@@ -802,27 +825,6 @@ namespace QLDSV_TC
             this.colDANGHIHOC.Visible = true;
             this.colDANGHIHOC.VisibleIndex = 7;
             this.colDANGHIHOC.Width = 94;
-            // 
-            // cbPhai
-            // 
-            this.cbPhai.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bdsSINHVIEN, "PHAI", true));
-            this.cbPhai.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbPhai.Location = new System.Drawing.Point(1305, 42);
-            this.cbPhai.Name = "cbPhai";
-            this.cbPhai.Size = new System.Drawing.Size(104, 24);
-            this.cbPhai.TabIndex = 17;
-            this.cbPhai.Text = "NAM";
-            this.cbPhai.UseVisualStyleBackColor = true;
-            // 
-            // pHAILabel
-            // 
-            pHAILabel.AutoSize = true;
-            pHAILabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            pHAILabel.Location = new System.Drawing.Point(1192, 42);
-            pHAILabel.Name = "pHAILabel";
-            pHAILabel.Size = new System.Drawing.Size(107, 22);
-            pHAILabel.TabIndex = 16;
-            pHAILabel.Text = "GIỚI TÍNH";
             // 
             // frmSinhVien
             // 
