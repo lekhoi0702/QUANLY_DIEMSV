@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -61,7 +62,7 @@ namespace QLDSV_TC
             }
             catch (Exception e)
             {
-                MessageBox.Show("Lỗi kết nối tới CSDL gốc!!!" + e.Message);
+                XtraMessageBox.Show("Lỗi kết nối tới CSDL gốc!!!" + e.Message);
                 return 0;
             }
         }
@@ -75,7 +76,7 @@ namespace QLDSV_TC
             {
                 if (txbTaiKhoan.Text.Trim() == "" || txbMatKhau.Text.Trim() == "")
                 {
-                    MessageBox.Show("Login name và mật khẩu không được trống", "", MessageBoxButtons.OK);
+                    XtraMessageBox.Show("Login name và mật khẩu không được trống", "", MessageBoxButtons.OK);
                     return;
                 }
                 else
@@ -103,7 +104,7 @@ namespace QLDSV_TC
             {
                 if (txbTaiKhoan.Text.Trim() == "" || txbMatKhau.Text.Trim() == "")
                 {
-                    MessageBox.Show("Login name và mật khẩu không được trống", "", MessageBoxButtons.OK);
+                    XtraMessageBox.Show("Login name và mật khẩu không được trống", "", MessageBoxButtons.OK);
                     return;
                 }
                 else
@@ -122,7 +123,7 @@ namespace QLDSV_TC
                     if (reader.HasRows == false)
                     {
                         Console.WriteLine("true");
-                        MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác!!!");
+                        XtraMessageBox.Show("Tài khoản hoặc mật khẩu không chính xác!!!");
                         return;
                     }
 
@@ -130,7 +131,7 @@ namespace QLDSV_TC
 
                     if (Convert.IsDBNull(Program.username))
                     {
-                        MessageBox.Show("Tài khoản không có quyền truy cập dữ liệu", "", MessageBoxButtons.OK);
+                        XtraMessageBox.Show("Tài khoản không có quyền truy cập dữ liệu", "", MessageBoxButtons.OK);
                         return;
                     }
                     Program.mGroup = "SV";
@@ -142,7 +143,7 @@ namespace QLDSV_TC
                 }
             }
             Program.conn.Close();
-            MessageBox.Show("Đăng nhập thành công !!!");
+            XtraMessageBox.Show("Đăng nhập thành công !!!");
             frmChinh FormChinh = new frmChinh();
             FormChinh.Show();
             this.Hide();

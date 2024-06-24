@@ -30,7 +30,6 @@ namespace QLDSV_TC
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLopTinChi));
             System.Windows.Forms.Label label3;
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label hUYLOPLabel;
@@ -42,6 +41,7 @@ namespace QLDSV_TC
             System.Windows.Forms.Label hOCKYLabel;
             System.Windows.Forms.Label nIENKHOALabel;
             System.Windows.Forms.Label mALTCLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLopTinChi));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bar3 = new DevExpress.XtraBars.Bar();
@@ -62,8 +62,24 @@ namespace QLDSV_TC
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbTenGV = new System.Windows.Forms.ComboBox();
+            this.cbTenMonHoc = new System.Windows.Forms.ComboBox();
+            this.txbHuyLop = new System.Windows.Forms.CheckBox();
             this.bdsLOPTINCHI = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet = new QLDSV_TC.QLDSV_TCDataSet();
+            this.txbSSVTT = new DevExpress.XtraEditors.SpinEdit();
+            this.txbMaKhoa = new System.Windows.Forms.TextBox();
+            this.txbMaGV = new System.Windows.Forms.TextBox();
+            this.txbNhom = new DevExpress.XtraEditors.SpinEdit();
+            this.txbMaMH = new System.Windows.Forms.TextBox();
+            this.txbHocKy = new DevExpress.XtraEditors.SpinEdit();
+            this.txbNienKhoa = new System.Windows.Forms.TextBox();
+            this.txbMaLTC = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.cbKhoa = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.LOPTINCHITableAdapter = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.LOPTINCHITableAdapter();
             this.tableAdapterManager = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.TableAdapterManager();
             this.DANGKYTableAdapter = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.DANGKYTableAdapter();
@@ -79,22 +95,6 @@ namespace QLDSV_TC
             this.colSOSVTOITHIEU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHUYLOP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.bdsDANGKY = new System.Windows.Forms.BindingSource(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.cbKhoa = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbTenGV = new System.Windows.Forms.ComboBox();
-            this.cbTenMonHoc = new System.Windows.Forms.ComboBox();
-            this.txbHuyLop = new System.Windows.Forms.CheckBox();
-            this.txbSSVTT = new DevExpress.XtraEditors.SpinEdit();
-            this.txbMaKhoa = new System.Windows.Forms.TextBox();
-            this.txbMaGV = new System.Windows.Forms.TextBox();
-            this.txbNhom = new DevExpress.XtraEditors.SpinEdit();
-            this.txbMaMH = new System.Windows.Forms.TextBox();
-            this.txbHocKy = new DevExpress.XtraEditors.SpinEdit();
-            this.txbNienKhoa = new System.Windows.Forms.TextBox();
-            this.txbMaLTC = new System.Windows.Forms.TextBox();
             label3 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             hUYLOPLabel = new System.Windows.Forms.Label();
@@ -109,18 +109,128 @@ namespace QLDSV_TC
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsLOPTINCHI)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcLOPTINCHI)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsDANGKY)).BeginInit();
-            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLOPTINCHI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txbSSVTT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txbNhom.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txbHocKy.Properties)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcLOPTINCHI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsDANGKY)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label3.Location = new System.Drawing.Point(647, 87);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(157, 22);
+            label3.TabIndex = 21;
+            label3.Text = "TÊN GIÁO VIÊN";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label2.Location = new System.Drawing.Point(265, 87);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(139, 21);
+            label2.TabIndex = 20;
+            label2.Text = "TÊN MÔN HỌC";
+            // 
+            // hUYLOPLabel
+            // 
+            hUYLOPLabel.AutoSize = true;
+            hUYLOPLabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            hUYLOPLabel.Location = new System.Drawing.Point(503, 135);
+            hUYLOPLabel.Name = "hUYLOPLabel";
+            hUYLOPLabel.Size = new System.Drawing.Size(90, 21);
+            hUYLOPLabel.TabIndex = 16;
+            hUYLOPLabel.Text = "HUỶ LỚP";
+            // 
+            // sOSVTOITHIEULabel
+            // 
+            sOSVTOITHIEULabel.AutoSize = true;
+            sOSVTOITHIEULabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            sOSVTOITHIEULabel.Location = new System.Drawing.Point(656, 135);
+            sOSVTOITHIEULabel.Name = "sOSVTOITHIEULabel";
+            sOSVTOITHIEULabel.Size = new System.Drawing.Size(244, 22);
+            sOSVTOITHIEULabel.TabIndex = 14;
+            sOSVTOITHIEULabel.Text = "SỐ SINH VIÊN TỐI THIỂU";
+            // 
+            // mAKHOALabel
+            // 
+            mAKHOALabel.AutoSize = true;
+            mAKHOALabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            mAKHOALabel.Location = new System.Drawing.Point(821, 34);
+            mAKHOALabel.Name = "mAKHOALabel";
+            mAKHOALabel.Size = new System.Drawing.Size(102, 22);
+            mAKHOALabel.TabIndex = 12;
+            mAKHOALabel.Text = "MÃ KHOA";
+            // 
+            // mAGVLabel
+            // 
+            mAGVLabel.AutoSize = true;
+            mAGVLabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            mAGVLabel.Location = new System.Drawing.Point(517, 34);
+            mAGVLabel.Name = "mAGVLabel";
+            mAGVLabel.Size = new System.Drawing.Size(148, 22);
+            mAGVLabel.TabIndex = 10;
+            mAGVLabel.Text = "MÃ GIÁO VIÊN";
+            // 
+            // nHOMLabel
+            // 
+            nHOMLabel.AutoSize = true;
+            nHOMLabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nHOMLabel.Location = new System.Drawing.Point(265, 135);
+            nHOMLabel.Name = "nHOMLabel";
+            nHOMLabel.Size = new System.Drawing.Size(66, 21);
+            nHOMLabel.TabIndex = 8;
+            nHOMLabel.Text = "NHÓM";
+            // 
+            // mAMHLabel
+            // 
+            mAMHLabel.AutoSize = true;
+            mAMHLabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            mAMHLabel.Location = new System.Drawing.Point(265, 37);
+            mAMHLabel.Name = "mAMHLabel";
+            mAMHLabel.Size = new System.Drawing.Size(132, 21);
+            mAMHLabel.TabIndex = 6;
+            mAMHLabel.Text = "MÃ MÔN HỌC";
+            // 
+            // hOCKYLabel
+            // 
+            hOCKYLabel.AutoSize = true;
+            hOCKYLabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            hOCKYLabel.Location = new System.Drawing.Point(12, 135);
+            hOCKYLabel.Name = "hOCKYLabel";
+            hOCKYLabel.Size = new System.Drawing.Size(81, 21);
+            hOCKYLabel.TabIndex = 4;
+            hOCKYLabel.Text = "HỌC KỲ";
+            // 
+            // nIENKHOALabel
+            // 
+            nIENKHOALabel.AutoSize = true;
+            nIENKHOALabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nIENKHOALabel.Location = new System.Drawing.Point(12, 87);
+            nIENKHOALabel.Name = "nIENKHOALabel";
+            nIENKHOALabel.Size = new System.Drawing.Size(111, 21);
+            nIENKHOALabel.TabIndex = 2;
+            nIENKHOALabel.Text = "NIÊN KHOÁ";
+            // 
+            // mALTCLabel
+            // 
+            mALTCLabel.AutoSize = true;
+            mALTCLabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            mALTCLabel.Location = new System.Drawing.Point(6, 37);
+            mALTCLabel.Name = "mALTCLabel";
+            mALTCLabel.Size = new System.Drawing.Size(152, 21);
+            mALTCLabel.TabIndex = 0;
+            mALTCLabel.Text = "MÃ LỚP TÍN CHỈ";
             // 
             // barManager1
             // 
@@ -324,6 +434,81 @@ namespace QLDSV_TC
             this.panelControl1.Size = new System.Drawing.Size(1413, 197);
             this.panelControl1.TabIndex = 6;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(331, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1080, 194);
+            this.panel1.TabIndex = 8;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(label3);
+            this.groupBox1.Controls.Add(label2);
+            this.groupBox1.Controls.Add(this.cbTenGV);
+            this.groupBox1.Controls.Add(this.cbTenMonHoc);
+            this.groupBox1.Controls.Add(hUYLOPLabel);
+            this.groupBox1.Controls.Add(this.txbHuyLop);
+            this.groupBox1.Controls.Add(sOSVTOITHIEULabel);
+            this.groupBox1.Controls.Add(this.txbSSVTT);
+            this.groupBox1.Controls.Add(mAKHOALabel);
+            this.groupBox1.Controls.Add(this.txbMaKhoa);
+            this.groupBox1.Controls.Add(mAGVLabel);
+            this.groupBox1.Controls.Add(this.txbMaGV);
+            this.groupBox1.Controls.Add(nHOMLabel);
+            this.groupBox1.Controls.Add(this.txbNhom);
+            this.groupBox1.Controls.Add(mAMHLabel);
+            this.groupBox1.Controls.Add(this.txbMaMH);
+            this.groupBox1.Controls.Add(hOCKYLabel);
+            this.groupBox1.Controls.Add(this.txbHocKy);
+            this.groupBox1.Controls.Add(nIENKHOALabel);
+            this.groupBox1.Controls.Add(this.txbNienKhoa);
+            this.groupBox1.Controls.Add(mALTCLabel);
+            this.groupBox1.Controls.Add(this.txbMaLTC);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1080, 194);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "THÔNG TIN LỚP TÍN CHỈ";
+            // 
+            // cbTenGV
+            // 
+            this.cbTenGV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTenGV.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTenGV.FormattingEnabled = true;
+            this.cbTenGV.Location = new System.Drawing.Point(814, 80);
+            this.cbTenGV.Name = "cbTenGV";
+            this.cbTenGV.Size = new System.Drawing.Size(227, 28);
+            this.cbTenGV.TabIndex = 19;
+            // 
+            // cbTenMonHoc
+            // 
+            this.cbTenMonHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTenMonHoc.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTenMonHoc.FormattingEnabled = true;
+            this.cbTenMonHoc.Location = new System.Drawing.Point(422, 80);
+            this.cbTenMonHoc.Name = "cbTenMonHoc";
+            this.cbTenMonHoc.Size = new System.Drawing.Size(212, 28);
+            this.cbTenMonHoc.TabIndex = 18;
+            // 
+            // txbHuyLop
+            // 
+            this.txbHuyLop.Checked = true;
+            this.txbHuyLop.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.txbHuyLop.Cursor = System.Windows.Forms.Cursors.No;
+            this.txbHuyLop.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bdsLOPTINCHI, "HUYLOP", true));
+            this.txbHuyLop.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbHuyLop.Location = new System.Drawing.Point(606, 133);
+            this.txbHuyLop.Name = "txbHuyLop";
+            this.txbHuyLop.Size = new System.Drawing.Size(28, 24);
+            this.txbHuyLop.TabIndex = 17;
+            this.txbHuyLop.UseVisualStyleBackColor = true;
+            // 
             // bdsLOPTINCHI
             // 
             this.bdsLOPTINCHI.DataMember = "LOPTINCHI";
@@ -333,6 +518,169 @@ namespace QLDSV_TC
             // 
             this.dataSet.DataSetName = "QLDSV_TCDataSet";
             this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // txbSSVTT
+            // 
+            this.txbSSVTT.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLOPTINCHI, "SOSVTOITHIEU", true));
+            this.txbSSVTT.EditValue = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.txbSSVTT.Location = new System.Drawing.Point(921, 131);
+            this.txbSSVTT.MenuManager = this.barManager1;
+            this.txbSSVTT.Name = "txbSSVTT";
+            this.txbSSVTT.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSSVTT.Properties.Appearance.Options.UseFont = true;
+            this.txbSSVTT.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txbSSVTT.Properties.MaxValue = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.txbSSVTT.Properties.MinValue = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.txbSSVTT.Size = new System.Drawing.Size(62, 26);
+            this.txbSSVTT.TabIndex = 15;
+            // 
+            // txbMaKhoa
+            // 
+            this.txbMaKhoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsLOPTINCHI, "MAKHOA", true));
+            this.txbMaKhoa.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbMaKhoa.Location = new System.Drawing.Point(929, 31);
+            this.txbMaKhoa.Name = "txbMaKhoa";
+            this.txbMaKhoa.Size = new System.Drawing.Size(100, 28);
+            this.txbMaKhoa.TabIndex = 13;
+            // 
+            // txbMaGV
+            // 
+            this.txbMaGV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsLOPTINCHI, "MAGV", true));
+            this.txbMaGV.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbMaGV.Location = new System.Drawing.Point(684, 28);
+            this.txbMaGV.Name = "txbMaGV";
+            this.txbMaGV.Size = new System.Drawing.Size(131, 28);
+            this.txbMaGV.TabIndex = 11;
+            // 
+            // txbNhom
+            // 
+            this.txbNhom.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLOPTINCHI, "NHOM", true));
+            this.txbNhom.EditValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txbNhom.Location = new System.Drawing.Point(422, 132);
+            this.txbNhom.MenuManager = this.barManager1;
+            this.txbNhom.Name = "txbNhom";
+            this.txbNhom.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbNhom.Properties.Appearance.Options.UseFont = true;
+            this.txbNhom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txbNhom.Properties.MaxValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txbNhom.Properties.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txbNhom.Size = new System.Drawing.Size(58, 26);
+            this.txbNhom.TabIndex = 9;
+            // 
+            // txbMaMH
+            // 
+            this.txbMaMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsLOPTINCHI, "MAMH", true));
+            this.txbMaMH.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbMaMH.Location = new System.Drawing.Point(422, 31);
+            this.txbMaMH.Name = "txbMaMH";
+            this.txbMaMH.Size = new System.Drawing.Size(89, 28);
+            this.txbMaMH.TabIndex = 7;
+            // 
+            // txbHocKy
+            // 
+            this.txbHocKy.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLOPTINCHI, "HOCKY", true));
+            this.txbHocKy.EditValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txbHocKy.Location = new System.Drawing.Point(142, 136);
+            this.txbHocKy.MenuManager = this.barManager1;
+            this.txbHocKy.Name = "txbHocKy";
+            this.txbHocKy.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbHocKy.Properties.Appearance.Options.UseFont = true;
+            this.txbHocKy.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txbHocKy.Properties.MaxValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txbHocKy.Properties.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txbHocKy.Size = new System.Drawing.Size(100, 26);
+            this.txbHocKy.TabIndex = 5;
+            // 
+            // txbNienKhoa
+            // 
+            this.txbNienKhoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsLOPTINCHI, "NIENKHOA", true));
+            this.txbNienKhoa.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbNienKhoa.Location = new System.Drawing.Point(142, 84);
+            this.txbNienKhoa.Name = "txbNienKhoa";
+            this.txbNienKhoa.Size = new System.Drawing.Size(100, 28);
+            this.txbNienKhoa.TabIndex = 3;
+            // 
+            // txbMaLTC
+            // 
+            this.txbMaLTC.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsLOPTINCHI, "MALTC", true));
+            this.txbMaLTC.Enabled = false;
+            this.txbMaLTC.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbMaLTC.Location = new System.Drawing.Point(182, 34);
+            this.txbMaLTC.Name = "txbMaLTC";
+            this.txbMaLTC.Size = new System.Drawing.Size(60, 28);
+            this.txbMaLTC.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.cbKhoa);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(2, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(329, 193);
+            this.panel2.TabIndex = 0;
+            // 
+            // cbKhoa
+            // 
+            this.cbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKhoa.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbKhoa.FormattingEnabled = true;
+            this.cbKhoa.Location = new System.Drawing.Point(100, 82);
+            this.cbKhoa.Margin = new System.Windows.Forms.Padding(6, 2, 6, 2);
+            this.cbKhoa.Name = "cbKhoa";
+            this.cbKhoa.Size = new System.Drawing.Size(219, 28);
+            this.cbKhoa.TabIndex = 3;
+            this.cbKhoa.SelectedIndexChanged += new System.EventHandler(this.cbKhoa_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 86);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 22);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "KHOA";
             // 
             // LOPTINCHITableAdapter
             // 
@@ -580,353 +928,6 @@ namespace QLDSV_TC
             this.bdsDANGKY.DataMember = "FK_DANGKY_LOPTINCHI";
             this.bdsDANGKY.DataSource = this.bdsLOPTINCHI;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.cbKhoa);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(2, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(329, 193);
-            this.panel2.TabIndex = 0;
-            // 
-            // cbKhoa
-            // 
-            this.cbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbKhoa.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbKhoa.FormattingEnabled = true;
-            this.cbKhoa.Location = new System.Drawing.Point(100, 82);
-            this.cbKhoa.Margin = new System.Windows.Forms.Padding(6, 2, 6, 2);
-            this.cbKhoa.Name = "cbKhoa";
-            this.cbKhoa.Size = new System.Drawing.Size(219, 28);
-            this.cbKhoa.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 86);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 22);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "KHOA";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(331, 1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1080, 194);
-            this.panel1.TabIndex = 8;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(label3);
-            this.groupBox1.Controls.Add(label2);
-            this.groupBox1.Controls.Add(this.cbTenGV);
-            this.groupBox1.Controls.Add(this.cbTenMonHoc);
-            this.groupBox1.Controls.Add(hUYLOPLabel);
-            this.groupBox1.Controls.Add(this.txbHuyLop);
-            this.groupBox1.Controls.Add(sOSVTOITHIEULabel);
-            this.groupBox1.Controls.Add(this.txbSSVTT);
-            this.groupBox1.Controls.Add(mAKHOALabel);
-            this.groupBox1.Controls.Add(this.txbMaKhoa);
-            this.groupBox1.Controls.Add(mAGVLabel);
-            this.groupBox1.Controls.Add(this.txbMaGV);
-            this.groupBox1.Controls.Add(nHOMLabel);
-            this.groupBox1.Controls.Add(this.txbNhom);
-            this.groupBox1.Controls.Add(mAMHLabel);
-            this.groupBox1.Controls.Add(this.txbMaMH);
-            this.groupBox1.Controls.Add(hOCKYLabel);
-            this.groupBox1.Controls.Add(this.txbHocKy);
-            this.groupBox1.Controls.Add(nIENKHOALabel);
-            this.groupBox1.Controls.Add(this.txbNienKhoa);
-            this.groupBox1.Controls.Add(mALTCLabel);
-            this.groupBox1.Controls.Add(this.txbMaLTC);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1080, 194);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "THÔNG TIN LỚP TÍN CHỈ";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label3.Location = new System.Drawing.Point(647, 87);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(157, 22);
-            label3.TabIndex = 21;
-            label3.Text = "TÊN GIÁO VIÊN";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label2.Location = new System.Drawing.Point(265, 87);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(139, 21);
-            label2.TabIndex = 20;
-            label2.Text = "TÊN MÔN HỌC";
-            // 
-            // cbTenGV
-            // 
-            this.cbTenGV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTenGV.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTenGV.FormattingEnabled = true;
-            this.cbTenGV.Location = new System.Drawing.Point(814, 80);
-            this.cbTenGV.Name = "cbTenGV";
-            this.cbTenGV.Size = new System.Drawing.Size(227, 28);
-            this.cbTenGV.TabIndex = 19;
-            // 
-            // cbTenMonHoc
-            // 
-            this.cbTenMonHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTenMonHoc.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTenMonHoc.FormattingEnabled = true;
-            this.cbTenMonHoc.Location = new System.Drawing.Point(422, 80);
-            this.cbTenMonHoc.Name = "cbTenMonHoc";
-            this.cbTenMonHoc.Size = new System.Drawing.Size(212, 28);
-            this.cbTenMonHoc.TabIndex = 18;
-            // 
-            // hUYLOPLabel
-            // 
-            hUYLOPLabel.AutoSize = true;
-            hUYLOPLabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            hUYLOPLabel.Location = new System.Drawing.Point(503, 135);
-            hUYLOPLabel.Name = "hUYLOPLabel";
-            hUYLOPLabel.Size = new System.Drawing.Size(90, 21);
-            hUYLOPLabel.TabIndex = 16;
-            hUYLOPLabel.Text = "HUỶ LỚP";
-            // 
-            // txbHuyLop
-            // 
-            this.txbHuyLop.Checked = true;
-            this.txbHuyLop.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.txbHuyLop.Cursor = System.Windows.Forms.Cursors.No;
-            this.txbHuyLop.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bdsLOPTINCHI, "HUYLOP", true));
-            this.txbHuyLop.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbHuyLop.Location = new System.Drawing.Point(606, 133);
-            this.txbHuyLop.Name = "txbHuyLop";
-            this.txbHuyLop.Size = new System.Drawing.Size(28, 24);
-            this.txbHuyLop.TabIndex = 17;
-            this.txbHuyLop.UseVisualStyleBackColor = true;
-            // 
-            // sOSVTOITHIEULabel
-            // 
-            sOSVTOITHIEULabel.AutoSize = true;
-            sOSVTOITHIEULabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            sOSVTOITHIEULabel.Location = new System.Drawing.Point(656, 135);
-            sOSVTOITHIEULabel.Name = "sOSVTOITHIEULabel";
-            sOSVTOITHIEULabel.Size = new System.Drawing.Size(244, 22);
-            sOSVTOITHIEULabel.TabIndex = 14;
-            sOSVTOITHIEULabel.Text = "SỐ SINH VIÊN TỐI THIỂU";
-            // 
-            // txbSSVTT
-            // 
-            this.txbSSVTT.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLOPTINCHI, "SOSVTOITHIEU", true));
-            this.txbSSVTT.EditValue = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.txbSSVTT.Location = new System.Drawing.Point(921, 131);
-            this.txbSSVTT.MenuManager = this.barManager1;
-            this.txbSSVTT.Name = "txbSSVTT";
-            this.txbSSVTT.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbSSVTT.Properties.Appearance.Options.UseFont = true;
-            this.txbSSVTT.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txbSSVTT.Properties.MaxValue = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.txbSSVTT.Properties.MinValue = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.txbSSVTT.Size = new System.Drawing.Size(62, 26);
-            this.txbSSVTT.TabIndex = 15;
-            // 
-            // mAKHOALabel
-            // 
-            mAKHOALabel.AutoSize = true;
-            mAKHOALabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            mAKHOALabel.Location = new System.Drawing.Point(821, 34);
-            mAKHOALabel.Name = "mAKHOALabel";
-            mAKHOALabel.Size = new System.Drawing.Size(102, 22);
-            mAKHOALabel.TabIndex = 12;
-            mAKHOALabel.Text = "MÃ KHOA";
-            // 
-            // txbMaKhoa
-            // 
-            this.txbMaKhoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsLOPTINCHI, "MAKHOA", true));
-            this.txbMaKhoa.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMaKhoa.Location = new System.Drawing.Point(929, 31);
-            this.txbMaKhoa.Name = "txbMaKhoa";
-            this.txbMaKhoa.Size = new System.Drawing.Size(100, 28);
-            this.txbMaKhoa.TabIndex = 13;
-            // 
-            // mAGVLabel
-            // 
-            mAGVLabel.AutoSize = true;
-            mAGVLabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            mAGVLabel.Location = new System.Drawing.Point(517, 34);
-            mAGVLabel.Name = "mAGVLabel";
-            mAGVLabel.Size = new System.Drawing.Size(148, 22);
-            mAGVLabel.TabIndex = 10;
-            mAGVLabel.Text = "MÃ GIÁO VIÊN";
-            // 
-            // txbMaGV
-            // 
-            this.txbMaGV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsLOPTINCHI, "MAGV", true));
-            this.txbMaGV.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMaGV.Location = new System.Drawing.Point(684, 28);
-            this.txbMaGV.Name = "txbMaGV";
-            this.txbMaGV.Size = new System.Drawing.Size(131, 28);
-            this.txbMaGV.TabIndex = 11;
-            // 
-            // nHOMLabel
-            // 
-            nHOMLabel.AutoSize = true;
-            nHOMLabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nHOMLabel.Location = new System.Drawing.Point(265, 135);
-            nHOMLabel.Name = "nHOMLabel";
-            nHOMLabel.Size = new System.Drawing.Size(66, 21);
-            nHOMLabel.TabIndex = 8;
-            nHOMLabel.Text = "NHÓM";
-            // 
-            // txbNhom
-            // 
-            this.txbNhom.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLOPTINCHI, "NHOM", true));
-            this.txbNhom.EditValue = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.txbNhom.Location = new System.Drawing.Point(422, 132);
-            this.txbNhom.MenuManager = this.barManager1;
-            this.txbNhom.Name = "txbNhom";
-            this.txbNhom.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbNhom.Properties.Appearance.Options.UseFont = true;
-            this.txbNhom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txbNhom.Properties.MaxValue = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.txbNhom.Properties.MinValue = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.txbNhom.Size = new System.Drawing.Size(58, 26);
-            this.txbNhom.TabIndex = 9;
-            // 
-            // mAMHLabel
-            // 
-            mAMHLabel.AutoSize = true;
-            mAMHLabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            mAMHLabel.Location = new System.Drawing.Point(265, 37);
-            mAMHLabel.Name = "mAMHLabel";
-            mAMHLabel.Size = new System.Drawing.Size(132, 21);
-            mAMHLabel.TabIndex = 6;
-            mAMHLabel.Text = "MÃ MÔN HỌC";
-            // 
-            // txbMaMH
-            // 
-            this.txbMaMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsLOPTINCHI, "MAMH", true));
-            this.txbMaMH.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMaMH.Location = new System.Drawing.Point(422, 31);
-            this.txbMaMH.Name = "txbMaMH";
-            this.txbMaMH.Size = new System.Drawing.Size(89, 28);
-            this.txbMaMH.TabIndex = 7;
-            // 
-            // hOCKYLabel
-            // 
-            hOCKYLabel.AutoSize = true;
-            hOCKYLabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            hOCKYLabel.Location = new System.Drawing.Point(12, 135);
-            hOCKYLabel.Name = "hOCKYLabel";
-            hOCKYLabel.Size = new System.Drawing.Size(81, 21);
-            hOCKYLabel.TabIndex = 4;
-            hOCKYLabel.Text = "HỌC KỲ";
-            // 
-            // txbHocKy
-            // 
-            this.txbHocKy.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLOPTINCHI, "HOCKY", true));
-            this.txbHocKy.EditValue = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.txbHocKy.Location = new System.Drawing.Point(142, 136);
-            this.txbHocKy.MenuManager = this.barManager1;
-            this.txbHocKy.Name = "txbHocKy";
-            this.txbHocKy.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbHocKy.Properties.Appearance.Options.UseFont = true;
-            this.txbHocKy.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txbHocKy.Properties.MaxValue = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.txbHocKy.Properties.MinValue = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.txbHocKy.Size = new System.Drawing.Size(100, 26);
-            this.txbHocKy.TabIndex = 5;
-            // 
-            // nIENKHOALabel
-            // 
-            nIENKHOALabel.AutoSize = true;
-            nIENKHOALabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nIENKHOALabel.Location = new System.Drawing.Point(12, 87);
-            nIENKHOALabel.Name = "nIENKHOALabel";
-            nIENKHOALabel.Size = new System.Drawing.Size(111, 21);
-            nIENKHOALabel.TabIndex = 2;
-            nIENKHOALabel.Text = "NIÊN KHOÁ";
-            // 
-            // txbNienKhoa
-            // 
-            this.txbNienKhoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsLOPTINCHI, "NIENKHOA", true));
-            this.txbNienKhoa.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbNienKhoa.Location = new System.Drawing.Point(142, 84);
-            this.txbNienKhoa.Name = "txbNienKhoa";
-            this.txbNienKhoa.Size = new System.Drawing.Size(100, 28);
-            this.txbNienKhoa.TabIndex = 3;
-            // 
-            // mALTCLabel
-            // 
-            mALTCLabel.AutoSize = true;
-            mALTCLabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            mALTCLabel.Location = new System.Drawing.Point(6, 37);
-            mALTCLabel.Name = "mALTCLabel";
-            mALTCLabel.Size = new System.Drawing.Size(152, 21);
-            mALTCLabel.TabIndex = 0;
-            mALTCLabel.Text = "MÃ LỚP TÍN CHỈ";
-            // 
-            // txbMaLTC
-            // 
-            this.txbMaLTC.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsLOPTINCHI, "MALTC", true));
-            this.txbMaLTC.Enabled = false;
-            this.txbMaLTC.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMaLTC.Location = new System.Drawing.Point(182, 34);
-            this.txbMaLTC.Name = "txbMaLTC";
-            this.txbMaLTC.Size = new System.Drawing.Size(60, 28);
-            this.txbMaLTC.TabIndex = 1;
-            // 
             // frmLopTinChi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -946,19 +947,19 @@ namespace QLDSV_TC
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bdsLOPTINCHI)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcLOPTINCHI)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsDANGKY)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLOPTINCHI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txbSSVTT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txbNhom.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txbHocKy.Properties)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcLOPTINCHI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsDANGKY)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

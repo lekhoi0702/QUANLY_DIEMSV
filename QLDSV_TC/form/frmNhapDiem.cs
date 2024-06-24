@@ -120,7 +120,7 @@ namespace QLDSV_TC
             }
             if (Program.KetNoi() == 0)
             {
-                MessageBox.Show("Lỗi kết nối về chi nhánh mới", "", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Lỗi kết nối về chi nhánh mới", "", MessageBoxButtons.OK);
             }
             else
             {
@@ -153,7 +153,7 @@ namespace QLDSV_TC
             BindingSource bdsTemp = (BindingSource)this.gcNhapDiem.DataSource;
             if (bdsTemp == null)
             {
-                MessageBox.Show("Chưa có thông tin để ghi điểm!", "", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Chưa có thông tin để ghi điểm!", "", MessageBoxButtons.OK);
                 return;
             }
 
@@ -191,7 +191,7 @@ namespace QLDSV_TC
                         (float)row["DIEM_CK"] < 0 || (float)row["DIEM_CK"] > 10)
                     {
                         tran.Rollback();
-                        XtraMessageBox.Show("Điểm số chỉ được nhập từ 0 đến 10! Xin vui lòng nhập lại");
+                   XtraMessageBox.Show("Điểm số chỉ được nhập từ 0 đến 10! Xin vui lòng nhập lại");
                         conn.Close();
                         loadBDMH();
                         return;
@@ -214,7 +214,7 @@ namespace QLDSV_TC
                 {
 
                     tran.Rollback();
-                    XtraMessageBox.Show("Lỗi ghi toàn bộ điểm vào Database. Bạn hãy xem lại ! " + sqlex.Message, "", MessageBoxButtons.OK);
+                   XtraMessageBox.Show("Lỗi ghi toàn bộ điểm vào Database. Bạn hãy xem lại ! " + sqlex.Message, "", MessageBoxButtons.OK);
                     loadBDMH();
                 }
                 catch (Exception ex2)
@@ -229,7 +229,7 @@ namespace QLDSV_TC
             {
                 conn.Close();
             }
-            XtraMessageBox.Show("Thao tác thành công!", "", MessageBoxButtons.OK);
+           XtraMessageBox.Show("Thao tác thành công!", "", MessageBoxButtons.OK);
             string cmd1 = "EXEC [dbo].[SP_BANGDIEM] '" + cbNienKhoa.Text + "', " + cbHocKi.Text + ", " + cbNhom.Text + ", N'" + cbTenMH.SelectedValue.ToString() + "'";
             DataTable diemTable = Program.ExecSqlDataTable(cmd1);
             this.bdsDiem.DataSource = diemTable;

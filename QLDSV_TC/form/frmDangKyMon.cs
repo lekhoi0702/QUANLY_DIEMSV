@@ -59,20 +59,25 @@ namespace QLDSV_TC
         }
 
 
-        /* private void btnSearchSinhVien_Click(object sender, EventArgs e)
-         {
-             if (txbMaSV.Text.Trim() == "")
-             {
-                 MessageBox.Show("Mã sinh viên không được thiếu!", "", MessageBoxButtons.OK);
-                 txbMaSV.Focus();
-                 return;
-             }
-             if (txbMaSV.Text != Program.username)
-             {
-                 MessageBox.Show("Bạn không phải là tài khoản sinh viên này!", "", MessageBoxButtons.OK);
-                 txbMaSV.Focus();
-                 return;
-             }
+       /* private void btnSearchSinhVien_Click(object sender, EventArgs e)
+        {
+            if (txbMaSV.Text.Trim() == "")
+            {
+                XtraMessageBox.Show("Mã sinh viên không được thiếu!", "", MessageBoxButtons.OK);
+                txbMaSV.Focus();
+                return;
+            }
+            if (txbMaSV.Text != Program.username)
+            {
+                XtraMessageBox.Show("Bạn không phải là tài khoản sinh viên này!", "", MessageBoxButtons.OK);
+                txbMaSV.Focus();
+                return;
+            }
+           
+            //     string cmd = "EXEC dbo.SP_getInfoSVDKI '" + txbMaSV.Text + "'";
+            string cmd1 = "EXEC dbo.SP_LIST_SVHUYDANGKY '" + txbMaSV.Text + "'";
+            //   DataTable tableSV = Program.ExecSqlDataTable(cmd);
+            DataTable tableDSLTC_HUY = Program.ExecSqlDataTable(cmd1);
 
              //     string cmd = "EXEC dbo.SP_getInfoSVDKI '" + txbMaSV.Text + "'";
              string cmd1 = "EXEC dbo.SP_LIST_SVHUYDANGKY '" + txbMaSV.Text + "'";
@@ -179,16 +184,16 @@ namespace QLDSV_TC
         {
             if (Program.username.Trim() == "")
             {
-                MessageBox.Show("Mã sinh viên không được thiếu!", "", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Mã sinh viên không được thiếu!", "", MessageBoxButtons.OK);
                 return;
             }
             if (bdsHUYDANGKY.Position < 0)
             {
-                MessageBox.Show("Bạn chưa chọn lớp tín chỉ để hủy");
+                XtraMessageBox.Show("Bạn chưa chọn lớp tín chỉ để hủy");
                 gcHUYDANGKY.Focus();
                 return;
             }
-            if (MessageBox.Show("Bạn có chắc chắn muốn hủy đăng kí lớp học này ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (XtraMessageBox.Show("Bạn có chắc chắn muốn hủy đăng kí lớp học này ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 string maltc = "";
                 if (((DataRowView)bdsHUYDANGKY[bdsHUYDANGKY.Position])["MALTC"] != null)
@@ -199,7 +204,7 @@ namespace QLDSV_TC
                 string cmd = "EXEC [dbo].[SP_XULY_LTC] '" + Program.username + "' , '" + maltc + "', " + 2;
                 if (Program.ExecSqlNonQuery(cmd) == 0)
                 {
-                    MessageBox.Show("Hủy đăng kí thành công!");
+                    XtraMessageBox.Show("Hủy đăng kí thành công!");
                     string cmd1 = "EXEC dbo.SP_LIST_SVHUYDANGKY '" + Program.username + "'";
                     DataTable tableDSLTC_HUY = Program.ExecSqlDataTable(cmd1);
                     this.bdsHUYDANGKY.DataSource = tableDSLTC_HUY;
@@ -209,7 +214,7 @@ namespace QLDSV_TC
                 }
                 else
                 {
-                    MessageBox.Show("Hủy đăng kí thất bại");
+                    XtraMessageBox.Show("Hủy đăng kí thất bại");
                 }
             }
             else
@@ -226,13 +231,13 @@ namespace QLDSV_TC
             DataRowView drv = ((DataRowView)bdsLopTinchi[bdsLopTinchi.Position]);
             String maLTC = drv["MALTC"].ToString().Trim();
             Console.WriteLine("ma lop tin chi: " + maLTC);
-            if (MessageBox.Show("Bạn có chắc chắn muốn đăng kí lớp học này ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (XtraMessageBox.Show("Bạn có chắc chắn muốn đăng kí lớp học này ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 string cmd = "EXEC [dbo].[SP_XULY_LTC] '" + Program.username + "' , '" + maLTC + "', " + 1;
                 Console.WriteLine("query:" + cmd);
                 if (Program.ExecSqlNonQuery(cmd) == 0)
                 {
-                    MessageBox.Show("Đăng kí thành công!");
+                    XtraMessageBox.Show("Đăng kí thành công!");
                     string cmd1 = "EXEC dbo.SP_LIST_SVHUYDANGKY '" + Program.username + "'";
                     DataTable tableDSLTC_HUY = Program.ExecSqlDataTable(cmd1);
                     this.bdsHUYDANGKY.DataSource = tableDSLTC_HUY;
@@ -242,7 +247,7 @@ namespace QLDSV_TC
                 }
                 else
                 {
-                    MessageBox.Show("Đăng kí thất bại");
+                    XtraMessageBox.Show("Đăng kí thất bại");
                 }
             }
             else
