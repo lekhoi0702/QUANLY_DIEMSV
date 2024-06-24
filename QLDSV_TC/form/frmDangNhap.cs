@@ -46,7 +46,7 @@ namespace QLDSV_TC
             conn_publisher.Close();
             Program.test.DataSource = dt;
             Program.bds_khoa.DataSource = dt;
-           
+
         }
 
         private int KetNoi_CSDLGOC()
@@ -110,8 +110,8 @@ namespace QLDSV_TC
                 {
                     Console.WriteLine("eewqqw");
                     Program.mlogin = "SVKN";
-                    Program.password = "123456";
-                  
+                    Program.password = "123";
+
                     if (Program.KetNoi() == 0) return;
 
 
@@ -169,7 +169,7 @@ namespace QLDSV_TC
             try
             {
                 Program.servername = cbChiNhanh.SelectedValue.ToString();
-              //  Console.WriteLine(cmbCHINHANH.SelectedValue.ToString());
+                //  Console.WriteLine(cmbCHINHANH.SelectedValue.ToString());
             }
             catch (Exception)
             {

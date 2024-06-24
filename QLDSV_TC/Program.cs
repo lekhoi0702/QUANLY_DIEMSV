@@ -14,7 +14,7 @@ namespace QLDSV_TC
         /// </summary>
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
-        public static String connstr_publisher = "Data Source=admin;Initial Catalog=QLDSV_TC;Integrated Security=True";
+        public static String connstr_publisher = "Data Source=M15R2\\SERVER_SITE1;Initial Catalog=QLDSV_TC;Integrated Security=True";
 
         public static SqlDataReader myReader;
         public static String servername = "";
@@ -34,7 +34,7 @@ namespace QLDSV_TC
 
         public static int mChinhanh = 0;
         public static BindingSource test = new BindingSource();
-       
+
 
         public static BindingSource bds_dspm = new BindingSource();  // giữ bdsPM khi đăng nhập
         public static frmDangNhap frmDangNhap;

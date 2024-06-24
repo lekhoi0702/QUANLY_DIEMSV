@@ -252,7 +252,7 @@ namespace QLDSV_TC
                 else
                     MessageBox.Show("Lỗi kết nối về chi nhánh mới", "", MessageBoxButtons.OK);
             }
-            else if (cbKhoa.SelectedIndex != 2)
+            else //if (cbKhoa.SelectedIndex != 2)
             {
                 this.LOPTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.LOPTableAdapter.Fill(this.dataSet.LOP);
@@ -437,6 +437,11 @@ namespace QLDSV_TC
         }
 
         private void panelControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cbKhoa_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
         }
