@@ -139,10 +139,10 @@ namespace QLDSV_TC
             {
                 if (Program.mGroup == "PGV")
                 {
-                    MessageBox.Show("PGV ko đc vào PKT", "", MessageBoxButtons.OK);
+                    XtraMessageBox.Show("PGV ko đc vào PKT", "", MessageBoxButtons.OK);
                 }
                 else
-                    MessageBox.Show("Lỗi kết nối về chi nhánh mới", "", MessageBoxButtons.OK);
+                    XtraMessageBox.Show("Lỗi kết nối về chi nhánh mới", "", MessageBoxButtons.OK);
             }
             else if (cbKhoa.SelectedIndex != 2)
             {
@@ -161,7 +161,7 @@ namespace QLDSV_TC
 
             if (undoList.Count == 0)
             {
-                MessageBox.Show("Không còn thao tác nào để khôi phục", "Thông báo", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Không còn thao tác nào để khôi phục", "Thông báo", MessageBoxButtons.OK);
                 btnPhucHoi.Enabled = false;
                 return;
             }
@@ -194,7 +194,7 @@ namespace QLDSV_TC
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Thực thi database thất bại!\n\n" + ex.Message, "Thông báo",
+                XtraMessageBox.Show("Thực thi database thất bại!\n\n" + ex.Message, "Thông báo",
                   MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.WriteLine(ex.Message);
                 return;
@@ -237,7 +237,7 @@ namespace QLDSV_TC
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi Làm mới" + ex.Message, "Thông báo", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Lỗi Làm mới" + ex.Message, "Thông báo", MessageBoxButtons.OK);
                 return;
             }
         }
@@ -249,12 +249,12 @@ namespace QLDSV_TC
             string malop = "";
             if (bdsDANGKY.Count > 0)
             {
-                MessageBox.Show("Không thể xóa lớp tín chỉ này vì đã có sinh viên đăng ký", "", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Không thể xóa lớp tín chỉ này vì đã có sinh viên đăng ký", "", MessageBoxButtons.OK);
                 return;
             }
 
 
-            if (MessageBox.Show("Bạn có thật sự muốn xóa lớp tín chỉ này ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (XtraMessageBox.Show("Bạn có thật sự muốn xóa lớp tín chỉ này ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 try
                 {
@@ -276,7 +276,7 @@ namespace QLDSV_TC
                 catch (Exception ex)
                 {
                     undoList.Pop();
-                    MessageBox.Show("Lỗi xóa lớp học: " + ex.Message, "", MessageBoxButtons.OK);
+                    XtraMessageBox.Show("Lỗi xóa lớp học: " + ex.Message, "", MessageBoxButtons.OK);
                     this.LOPTINCHITableAdapter.Fill(this.dataSet.LOPTINCHI);
                     bdsLOPTINCHI.Position = bdsLOPTINCHI.Find("MALTC", malop);
                     return;
@@ -343,37 +343,37 @@ namespace QLDSV_TC
         {
             if (txbHocKy.Value == 0)
             {
-                MessageBox.Show("Học kì không được thiếu!", "", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Học kì không được thiếu!", "", MessageBoxButtons.OK);
                 txbHocKy.Focus();
                 return false;
             }
             if (txbHocKy.Value < 0)
             {
-                MessageBox.Show("Học kì không thể là số âm!", "", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Học kì không thể là số âm!", "", MessageBoxButtons.OK);
                 txbHocKy.Focus();
                 return false;
             }
             if (txbSSVTT.Value == 0)
             {
-                MessageBox.Show("Số sinh viên tối thiểu không được thiếu!", "", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Số sinh viên tối thiểu không được thiếu!", "", MessageBoxButtons.OK);
                 txbSSVTT.Focus();
                 return false;
             }
             if (txbSSVTT.Value < 0)
             {
-                MessageBox.Show("Số sinh viên tối thiểu không thể là số âm!", "", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Số sinh viên tối thiểu không thể là số âm!", "", MessageBoxButtons.OK);
                 txbSSVTT.Focus();
                 return false;
             }
             if (txbNhom.Value == 0)
             {
-                MessageBox.Show("Nhóm không được thiếu!", "", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Nhóm không được thiếu!", "", MessageBoxButtons.OK);
                 txbNhom.Focus();
                 return false;
             }
             if (txbNhom.Value < 0)
             {
-                MessageBox.Show("Số nhóm không thể là số âm!", "", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Số nhóm không thể là số âm!", "", MessageBoxButtons.OK);
                 txbNhom.Focus();
                 return false;
             }
@@ -381,19 +381,19 @@ namespace QLDSV_TC
 
             if (cbTenMonHoc.SelectedValue == null)
             {
-                MessageBox.Show("Vui lòng chọn môn học cho lớp tín chỉ", "", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Vui lòng chọn môn học cho lớp tín chỉ", "", MessageBoxButtons.OK);
                 cbTenMonHoc.Focus();
                 return false;
             }
             if (cbTenGV.SelectedValue == null)
             {
-                MessageBox.Show("Vui lòng chọn giảng viên 1 cho lớp tín chỉ", "", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Vui lòng chọn giảng viên 1 cho lớp tín chỉ", "", MessageBoxButtons.OK);
                 cbTenGV.Focus();
                 return false;
             }
             /*if (cbTenGiangVien.SelectedValue == cbTenGiangVien2.SelectedValue)
             {
-                MessageBox.Show("Trùng lập dữ liệu 2 giảng viên lớp tín chỉ", "", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Trùng lập dữ liệu 2 giảng viên lớp tín chỉ", "", MessageBoxButtons.OK);
                 cbTenGiangVien2.Focus();
                 return;
             }*/
@@ -401,7 +401,7 @@ namespace QLDSV_TC
 
             if (txbNienKhoa.Text.Trim() == "")
             {
-                MessageBox.Show("Niên khóa không được thiếu!", "", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Niên khóa không được thiếu!", "", MessageBoxButtons.OK);
                 txbNienKhoa.Focus();
                 return false;
             }
@@ -422,17 +422,17 @@ namespace QLDSV_TC
                 int resultMa = Program.CheckDataHelper(query1);
                 if (resultMa == -1)
                 {
-                    XtraMessageBox.Show("Lỗi kết nối với database. Mời bạn xem lại", "", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Lỗi kết nối với database. Mời bạn xem lại", "", MessageBoxButtons.OK);
                     this.Close();
                 }
                 if (resultMa == 1)
                 {
-                    XtraMessageBox.Show("Mã Sinh Viên đã tồn tại. Mời bạn nhập mã khác !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                XtraMessageBox.Show("Mã Sinh Viên đã tồn tại. Mời bạn nhập mã khác !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
                 if (resultMa == 2)
                 {
-                    XtraMessageBox.Show("Mã Sinh Viên đã tồn tại ở Khoa khác. Mời bạn nhập lại !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                  XtraMessageBox.Show("Mã Sinh Viên đã tồn tại ở Khoa khác. Mời bạn nhập lại !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
             }
@@ -448,7 +448,7 @@ namespace QLDSV_TC
             if (validatorLopTinChi() == true)
             {
 
-                DialogResult dr = MessageBox.Show("Ghi thông tin vào database?", "Thông báo",
+                DialogResult dr = XtraMessageBox.Show("Ghi thông tin vào database?", "Thông báo",
                   MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dr == DialogResult.OK)
                 {
@@ -465,13 +465,13 @@ namespace QLDSV_TC
                         dangsua = false;
                         btnPhucHoi.Enabled = true;
 
-                        MessageBox.Show("Ghi thành công", "Thông báo", MessageBoxButtons.OK);
+                        XtraMessageBox.Show("Ghi thành công", "Thông báo", MessageBoxButtons.OK);
 
 
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Lỗi ghi lớp học: " + ex.Message, "", MessageBoxButtons.OK);
+                        XtraMessageBox.Show("Lỗi ghi lớp học: " + ex.Message, "", MessageBoxButtons.OK);
                         Console.WriteLine(ex.Message);
                         return;
                     }

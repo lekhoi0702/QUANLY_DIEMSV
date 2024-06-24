@@ -30,8 +30,8 @@ namespace QLDSV_TC
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhapDiem));
             System.Windows.Forms.Label tENMHLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhapDiem));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bar2 = new DevExpress.XtraBars.Bar();
@@ -54,6 +54,17 @@ namespace QLDSV_TC
             this.bdsMONHOC = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet = new QLDSV_TC.QLDSV_TCDataSet();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbTenMH = new System.Windows.Forms.ComboBox();
+            this.cbNhom = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbHocKi = new System.Windows.Forms.ComboBox();
+            this.cbNienKhoa = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.cbKhoa = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.gcNhapDiem = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -65,28 +76,27 @@ namespace QLDSV_TC
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MONHOCTableAdapter = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.MONHOCTableAdapter();
             this.tableAdapterManager = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.TableAdapterManager();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.cbKhoa = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbTenMH = new System.Windows.Forms.ComboBox();
-            this.cbNhom = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbHocKi = new System.Windows.Forms.ComboBox();
-            this.cbNienKhoa = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             tENMHLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsMONHOC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcNhapDiem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // tENMHLabel
+            // 
+            tENMHLabel.AutoSize = true;
+            tENMHLabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tENMHLabel.Location = new System.Drawing.Point(312, 91);
+            tENMHLabel.Name = "tENMHLabel";
+            tENMHLabel.Size = new System.Drawing.Size(82, 22);
+            tENMHLabel.TabIndex = 20;
+            tENMHLabel.Text = "Tên môn";
             // 
             // barManager1
             // 
@@ -290,6 +300,126 @@ namespace QLDSV_TC
             this.panelControl1.Size = new System.Drawing.Size(1203, 129);
             this.panelControl1.TabIndex = 9;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(tENMHLabel);
+            this.groupBox1.Controls.Add(this.cbTenMH);
+            this.groupBox1.Controls.Add(this.cbNhom);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.cbHocKi);
+            this.groupBox1.Controls.Add(this.cbNienKhoa);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(364, 2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(837, 125);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "THÔNG TIN NHẬP ĐIỂM";
+            // 
+            // cbTenMH
+            // 
+            this.cbTenMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsMONHOC, "TENMH", true));
+            this.cbTenMH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTenMH.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTenMH.FormattingEnabled = true;
+            this.cbTenMH.Location = new System.Drawing.Point(411, 88);
+            this.cbTenMH.Name = "cbTenMH";
+            this.cbTenMH.Size = new System.Drawing.Size(276, 28);
+            this.cbTenMH.TabIndex = 21;
+            // 
+            // cbNhom
+            // 
+            this.cbNhom.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbNhom.FormattingEnabled = true;
+            this.cbNhom.Location = new System.Drawing.Point(417, 44);
+            this.cbNhom.Name = "cbNhom";
+            this.cbNhom.Size = new System.Drawing.Size(194, 28);
+            this.cbNhom.TabIndex = 20;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(318, 44);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 22);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Nhóm";
+            // 
+            // cbHocKi
+            // 
+            this.cbHocKi.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbHocKi.FormattingEnabled = true;
+            this.cbHocKi.Location = new System.Drawing.Point(112, 88);
+            this.cbHocKi.Name = "cbHocKi";
+            this.cbHocKi.Size = new System.Drawing.Size(194, 28);
+            this.cbHocKi.TabIndex = 18;
+            // 
+            // cbNienKhoa
+            // 
+            this.cbNienKhoa.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbNienKhoa.FormattingEnabled = true;
+            this.cbNienKhoa.Location = new System.Drawing.Point(118, 44);
+            this.cbNienKhoa.Name = "cbNienKhoa";
+            this.cbNienKhoa.Size = new System.Drawing.Size(194, 28);
+            this.cbNienKhoa.TabIndex = 17;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 91);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 22);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Học kì";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 22);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Niên khóa";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.cbKhoa);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(2, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(362, 125);
+            this.panel2.TabIndex = 0;
+            // 
+            // cbKhoa
+            // 
+            this.cbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKhoa.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbKhoa.FormattingEnabled = true;
+            this.cbKhoa.Location = new System.Drawing.Point(100, 57);
+            this.cbKhoa.Margin = new System.Windows.Forms.Padding(8, 2, 8, 2);
+            this.cbKhoa.Name = "cbKhoa";
+            this.cbKhoa.Size = new System.Drawing.Size(251, 28);
+            this.cbKhoa.TabIndex = 3;
+            this.cbKhoa.SelectedIndexChanged += new System.EventHandler(this.cbKhoa_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(2, 61);
+            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 22);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "KHOA";
+            // 
             // gcNhapDiem
             // 
             this.gcNhapDiem.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -475,135 +605,6 @@ namespace QLDSV_TC
             this.tableAdapterManager.SINHVIENTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QLDSV_TC.QLDSV_TCDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.cbKhoa);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(2, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(362, 125);
-            this.panel2.TabIndex = 0;
-            // 
-            // cbKhoa
-            // 
-            this.cbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbKhoa.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbKhoa.FormattingEnabled = true;
-            this.cbKhoa.Location = new System.Drawing.Point(100, 57);
-            this.cbKhoa.Margin = new System.Windows.Forms.Padding(8, 2, 8, 2);
-            this.cbKhoa.Name = "cbKhoa";
-            this.cbKhoa.Size = new System.Drawing.Size(251, 28);
-            this.cbKhoa.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(2, 61);
-            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 22);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "KHOA";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(tENMHLabel);
-            this.groupBox1.Controls.Add(this.cbTenMH);
-            this.groupBox1.Controls.Add(this.cbNhom);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.cbHocKi);
-            this.groupBox1.Controls.Add(this.cbNienKhoa);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(364, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(837, 125);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "THÔNG TIN NHẬP ĐIỂM";
-            // 
-            // tENMHLabel
-            // 
-            tENMHLabel.AutoSize = true;
-            tENMHLabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tENMHLabel.Location = new System.Drawing.Point(312, 91);
-            tENMHLabel.Name = "tENMHLabel";
-            tENMHLabel.Size = new System.Drawing.Size(82, 22);
-            tENMHLabel.TabIndex = 20;
-            tENMHLabel.Text = "Tên môn";
-            // 
-            // cbTenMH
-            // 
-            this.cbTenMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsMONHOC, "TENMH", true));
-            this.cbTenMH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTenMH.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTenMH.FormattingEnabled = true;
-            this.cbTenMH.Location = new System.Drawing.Point(411, 88);
-            this.cbTenMH.Name = "cbTenMH";
-            this.cbTenMH.Size = new System.Drawing.Size(276, 28);
-            this.cbTenMH.TabIndex = 21;
-            // 
-            // cbNhom
-            // 
-            this.cbNhom.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbNhom.FormattingEnabled = true;
-            this.cbNhom.Location = new System.Drawing.Point(417, 44);
-            this.cbNhom.Name = "cbNhom";
-            this.cbNhom.Size = new System.Drawing.Size(194, 28);
-            this.cbNhom.TabIndex = 20;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(318, 44);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 22);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Nhóm";
-            // 
-            // cbHocKi
-            // 
-            this.cbHocKi.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbHocKi.FormattingEnabled = true;
-            this.cbHocKi.Location = new System.Drawing.Point(112, 88);
-            this.cbHocKi.Name = "cbHocKi";
-            this.cbHocKi.Size = new System.Drawing.Size(194, 28);
-            this.cbHocKi.TabIndex = 18;
-            // 
-            // cbNienKhoa
-            // 
-            this.cbNienKhoa.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbNienKhoa.FormattingEnabled = true;
-            this.cbNienKhoa.Location = new System.Drawing.Point(118, 44);
-            this.cbNienKhoa.Name = "cbNienKhoa";
-            this.cbNienKhoa.Size = new System.Drawing.Size(194, 28);
-            this.cbNienKhoa.TabIndex = 17;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 91);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 22);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Học kì";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 22);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Niên khóa";
-            // 
             // frmNhapDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -624,12 +625,12 @@ namespace QLDSV_TC
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gcNhapDiem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcNhapDiem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

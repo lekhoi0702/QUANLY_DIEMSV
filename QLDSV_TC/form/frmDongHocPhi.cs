@@ -40,7 +40,7 @@ namespace QLDSV_TC
             SqlDataReader reader = Program.ExecSqlDataReader(cmd1);
             if (reader.HasRows == false)
             {
-                MessageBox.Show("Mã sinh viên không tồn tại");
+                XtraMessageBox.Show("Mã sinh viên không tồn tại");
                 reader.Close();
                 return;
             }
@@ -68,7 +68,7 @@ namespace QLDSV_TC
         {
             if (txbMaSV.Text.Trim() == "")
             {
-                MessageBox.Show("Mã sinh viên không được bỏ trống");
+                XtraMessageBox.Show("Mã sinh viên không được bỏ trống");
                 txbMaSV.Focus();
                 return;
             }
@@ -125,39 +125,39 @@ namespace QLDSV_TC
                 {
                     if (txbMaSV.Text.Trim() == "")
                     {
-                        MessageBox.Show("Bạn chưa nhập mã sinh viên");
+                        XtraMessageBox.Show("Bạn chưa nhập mã sinh viên");
                         txbMaSV.Focus();
                         return;
                     }
                     if (float.Parse(((DataRowView)bdsHocPhi[bdsHocPhi.Position])["HOCPHI"].ToString()) <= 0)
                     {
-                        MessageBox.Show("Số tiền không được nhỏ hơn 0đ");
+                        XtraMessageBox.Show("Số tiền không được nhỏ hơn 0đ");
                         return;
                     }
                     if (((DataRowView)bdsHocPhi[bdsHocPhi.Position])["NIENKHOA"].ToString() == "")
                     {
-                        MessageBox.Show("Niên khóa chưa nhập!");
+                        XtraMessageBox.Show("Niên khóa chưa nhập!");
                         return;
                     }
                     if (((DataRowView)bdsHocPhi[bdsHocPhi.Position])["HOCKY"].ToString() == "")
                     {
-                        MessageBox.Show("Học kỳ chưa nhập!");
+                        XtraMessageBox.Show("Học kỳ chưa nhập!");
                         return;
                     }
                     if (((DataRowView)bdsHocPhi[bdsHocPhi.Position])["HOCPHI"].ToString() == "")
                     {
-                        MessageBox.Show("Học phí chưa nhập!");
+                        XtraMessageBox.Show("Học phí chưa nhập!");
                         return;
                     }
                     if (float.Parse(((DataRowView)bdsHocPhi[bdsHocPhi.Position])["HOCKY"].ToString()) <= 0)
                     {
-                        MessageBox.Show("Học kì không được nhỏ hơn 1");
+                        XtraMessageBox.Show("Học kì không được nhỏ hơn 1");
                         return;
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    XtraMessageBox.Show(ex.Message);
                     return;
                 }
 
@@ -199,16 +199,16 @@ namespace QLDSV_TC
                     btnHuy.Enabled = false;
                     if (result == 1)
                     {
-                        MessageBox.Show("Thêm thành công!", "", MessageBoxButtons.OK);
+                        XtraMessageBox.Show("Thêm thành công!", "", MessageBoxButtons.OK);
                     }
                     else
                     {
-                        MessageBox.Show("Thêm thất bại!", "", MessageBoxButtons.OK);
+                        XtraMessageBox.Show("Thêm thất bại!", "", MessageBoxButtons.OK);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi thêm học phí: " + ex.Message, "", MessageBoxButtons.OK);
+                    XtraMessageBox.Show("Lỗi thêm học phí: " + ex.Message, "", MessageBoxButtons.OK);
                     return;
                 }
             }
@@ -218,18 +218,18 @@ namespace QLDSV_TC
                 {
                     if (((DataRowView)bdsCTHP[bdsCTHP.Position])["SOTIENDONG"].ToString() == "")
                     {
-                        MessageBox.Show("Số tiền không được bỏ trống");
+                        XtraMessageBox.Show("Số tiền không được bỏ trống");
                         return;
                     }
                     if (float.Parse(((DataRowView)bdsCTHP[bdsCTHP.Position])["SOTIENDONG"].ToString()) <= 0)
                     {
-                        MessageBox.Show("Số tiền không được nhỏ hơn 0đ");
+                        XtraMessageBox.Show("Số tiền không được nhỏ hơn 0đ");
                         return;
                     }
 
                     if (float.Parse(((DataRowView)bdsCTHP[bdsCTHP.Position])["SOTIENDONG"].ToString()) > float.Parse(((DataRowView)bdsHocPhi[bdsHocPhi.Position])["SOTIENCANDONG"].ToString()))
                     {
-                        MessageBox.Show("Số tiền đóng không được lớn hơn số tiền cần đóng!");
+                        XtraMessageBox.Show("Số tiền đóng không được lớn hơn số tiền cần đóng!");
                         return;
                     }
 
@@ -255,16 +255,16 @@ namespace QLDSV_TC
                     btnHuy.Enabled = false;
                     if (result == 1)
                     {
-                        MessageBox.Show("Đóng học phí thành công", "", MessageBoxButtons.OK);
+                        XtraMessageBox.Show("Đóng học phí thành công", "", MessageBoxButtons.OK);
                     }
                     else
                     {
-                        MessageBox.Show("Thất bại", "", MessageBoxButtons.OK);
+                        XtraMessageBox.Show("Thất bại", "", MessageBoxButtons.OK);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    XtraMessageBox.Show(ex.Message);
                 }
 
 
@@ -324,7 +324,7 @@ namespace QLDSV_TC
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi Làm mới" + ex.Message, "Thông báo", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Lỗi Làm mới" + ex.Message, "Thông báo", MessageBoxButtons.OK);
                 return;
             }
         }
