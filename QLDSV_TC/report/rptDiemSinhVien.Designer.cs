@@ -72,7 +72,7 @@ namespace QLDSV_TC.report
             // 
             // sqlDataSource1
             // 
-            this.sqlDataSource1.ConnectionName = "QLDSV_TCConnectionString";
+            this.sqlDataSource1.ConnectionName = "localhost_QLDSV_TC_Connection";
             this.sqlDataSource1.Name = "sqlDataSource1";
             storedProcQuery1.Name = "SP_DS_DIEMSV";
             queryParameter1.Name = "@MSSV";

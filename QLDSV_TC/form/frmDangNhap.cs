@@ -89,6 +89,8 @@ namespace QLDSV_TC
                     Program.passwordDN = Program.password;
 
                     string strLenh = "EXEC dbo.SP_DANGNHAP '" + Program.mlogin + "'";
+                    Console.WriteLine(cbChiNhanh.SelectedValue);
+
                     Program.myReader = Program.ExecSqlDataReader(strLenh);
                     if (Program.myReader == null) return;
                     Program.myReader.Read(); // Đọc 1 dòng nếu dữ liệu có nhiều dùng thì dùng for lặp nếu null thì break

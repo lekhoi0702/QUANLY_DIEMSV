@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -119,8 +120,15 @@ namespace QLDSV_TC
 
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+
+           
             if (btnMenu.Links[0].Caption == "Học phí")
             {
+                GridView gridView = (GridView)this.gcHocPhi.MainView;
+
+                // Force the current edit to end and commit changes
+                gridView.CloseEditor();
+                gridView.UpdateCurrentRow();
                 try
                 {
                     if (txbMaSV.Text.Trim() == "")
@@ -200,10 +208,13 @@ namespace QLDSV_TC
                     if (result == 1)
                     {
                         XtraMessageBox.Show("Thêm thành công!", "", MessageBoxButtons.OK);
+                        loadHP();
                     }
                     else
                     {
                         XtraMessageBox.Show("Thêm thất bại!", "", MessageBoxButtons.OK);
+                        loadHP();
+                        btnHuy.Enabled = true;
                     }
                 }
                 catch (Exception ex)
@@ -214,6 +225,11 @@ namespace QLDSV_TC
             }
             if (btnMenu.Links[0].Caption == "Chi tiết học phí")
             {
+                GridView gridView = (GridView)this.gcCTHP.MainView;
+
+                // Force the current edit to end and commit changes
+                gridView.CloseEditor();
+                gridView.UpdateCurrentRow();
                 try
                 {
                     if (((DataRowView)bdsCTHP[bdsCTHP.Position])["SOTIENDONG"].ToString() == "")
@@ -256,16 +272,22 @@ namespace QLDSV_TC
                     if (result == 1)
                     {
                         XtraMessageBox.Show("Đóng học phí thành công", "", MessageBoxButtons.OK);
+                        loadHP();
+                        
                     }
                     else
                     {
                         XtraMessageBox.Show("Thất bại", "", MessageBoxButtons.OK);
+                        
                     }
                 }
                 catch (Exception ex)
                 {
                     XtraMessageBox.Show(ex.Message);
+                    btnHuy.Enabled = true;
                 }
+
+                
 
 
               

@@ -138,7 +138,7 @@ namespace QLDSV_TC.reportForm
 
                 if (Program.mGroup.Equals("PGV") || Program.mGroup.Equals("KHOA"))
                 {
-                    if (KetNoiSql("ADMIN\\MSSQLSERVER03", Program.remotelogin, Program.remotepassword) == 0)
+                    if (KetNoiSql("M15R2\\SERVER_SITE1", Program.remotelogin, Program.remotepassword) == 0)
                     {
                         MessageBox.Show("Lỗi kết nối về chi nhánh mới", "", MessageBoxButtons.OK);
                     }
@@ -236,13 +236,13 @@ namespace QLDSV_TC.reportForm
             string malop = cbLop.Text;
             string tongtien = "";
             string cmd = "SELECT TENKHOA FROM dbo.LOP,dbo.KHOA WHERE MALOP = '" + malop + "' AND KHOA.MAKHOA = LOP.MAKHOA";
-            SqlDataReader reader = ExecSqlDataReader(cmd);
-            reader.Read();
-            string tenkhoa = reader.GetString(0);
-            reader.Close();
+            Program.myReader = Program.ExecSqlDataReader(cmd);
+            Program.myReader.Read();
+            string tenkhoa = Program.myReader.GetString(0);
+            Program.myReader.Close();
 
             string cmd1 = "EXEC [dbo].[SP_SUM_HP_THEOLOP] '" + malop + "', '" + nienkhoa + "', " + hocky;
-            SqlDataReader reader1 = ExecSqlDataReader(cmd1);
+            SqlDataReader reader1 = Program.ExecSqlDataReader(cmd1);
             reader1.Read();
             tongtien = reader1.GetInt32(0).ToString();
             reader1.Close();
@@ -267,7 +267,7 @@ namespace QLDSV_TC.reportForm
 
 
         }
-
+/*
         public static SqlDataReader ExecSqlDataReader(string strlenh)
         {
             SqlDataReader myreader;
@@ -285,7 +285,7 @@ namespace QLDSV_TC.reportForm
                 MessageBox.Show(ex.Message);
                 return null;
             }
-        }
+        }*/
 
 
         private void btnThoat_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

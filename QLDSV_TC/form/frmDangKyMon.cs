@@ -135,6 +135,14 @@ namespace QLDSV_TC
             this.gcLOPTINCHI.DataSource = this.bdsLopTinchi;
             this.btnDangKy.Visible = true;
         }
+        private void LoadDSLTC()
+        {
+            string cmd = "EXEC [dbo].[SP_InDanhSachLopTinChi] '" + cbNienKhoa.Text + "', '" + cbHocKi.Text + "'";
+            DataTable tableLopTC = Program.ExecSqlDataTable(cmd);
+            this.bdsLopTinchi.DataSource = tableLopTC;
+            this.gcLOPTINCHI.DataSource = this.bdsLopTinchi;
+            this.btnDangKy.Visible = true;
+        }
 
 
 
@@ -189,19 +197,28 @@ namespace QLDSV_TC
                     maltc = ((DataRowView)bdsHUYDANGKY[bdsHUYDANGKY.Position])["MALTC"].ToString();
                 }
 
-                string cmd = "EXEC [dbo].[SP_XULY_LTC] '" + Program.username + "' , '" + maltc + "', " + 2;
-                if (Program.ExecSqlNonQuery(cmd) == 0)
+                try
                 {
-                    XtraMessageBox.Show("Hủy đăng kí thành công!");
-                    string cmd1 = "EXEC dbo.SP_LIST_SVHUYDANGKY '" + Program.username + "'";
-                    DataTable tableDSLTC_HUY = Program.ExecSqlDataTable(cmd1);
-                    this.bdsHUYDANGKY.DataSource = tableDSLTC_HUY;
+                    string cmd = $"EXEC [dbo].[SP_XULY_LTC] '{Program.username}', '{maltc}', 2";
 
-                    this.gcHUYDANGKY.DataSource = this.bdsHUYDANGKY;
+                    if (Program.ExecSqlNonQuery(cmd) == 0)
+                    {
+                        XtraMessageBox.Show("Hủy đăng kí thành công!");
+
+                        string cmd1 = $"EXEC dbo.SP_LIST_SVHUYDANGKY '{Program.username}'";
+                        DataTable tableDSLTC_HUY = Program.ExecSqlDataTable(cmd1);
+                        this.bdsHUYDANGKY.DataSource = tableDSLTC_HUY;
+                        this.gcHUYDANGKY.DataSource = this.bdsHUYDANGKY;
+                        LoadDSLTC();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Hủy đăng kí thất bại");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    XtraMessageBox.Show("Hủy đăng kí thất bại");
+                    XtraMessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
                 }
             }
             else
@@ -220,21 +237,32 @@ namespace QLDSV_TC
             Console.WriteLine("ma lop tin chi: " + maLTC);
             if (XtraMessageBox.Show("Bạn có chắc chắn muốn đăng kí lớp học này ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                string cmd = "EXEC [dbo].[SP_XULY_LTC] '" + Program.username + "' , '" + maLTC + "', " + 1;
-                Console.WriteLine("query:" + cmd);
-                if (Program.ExecSqlNonQuery(cmd) == 0)
+                try
                 {
-                    XtraMessageBox.Show("Đăng kí thành công!");
-                    string cmd1 = "EXEC dbo.SP_LIST_SVHUYDANGKY '" + Program.username + "'";
-                    DataTable tableDSLTC_HUY = Program.ExecSqlDataTable(cmd1);
-                    this.bdsHUYDANGKY.DataSource = tableDSLTC_HUY;
-                    this.gcHUYDANGKY.DataSource = this.bdsHUYDANGKY;
-                    this.gcLOPTINCHI.DataSource = this.bdsLopTinchi;
+                    string cmd = $"EXEC [dbo].[SP_XULY_LTC] '{Program.username}', '{maLTC}', 1";
+                    Console.WriteLine("query: " + cmd);
+
+                    if (Program.ExecSqlNonQuery(cmd) == 0)
+                    {
+                        XtraMessageBox.Show("Đăng kí thành công!");
+                        LoadDSLTC();
+
+                        string cmd1 = $"EXEC dbo.SP_LIST_SVHUYDANGKY '{Program.username}'";
+                        DataTable tableDSLTC_HUY = Program.ExecSqlDataTable(cmd1);
+                        this.bdsHUYDANGKY.DataSource = tableDSLTC_HUY;
+                        this.gcHUYDANGKY.DataSource = this.bdsHUYDANGKY;
+                        this.gcLOPTINCHI.DataSource = this.bdsLopTinchi;
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Đăng kí thất bại");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    XtraMessageBox.Show("Đăng kí thất bại");
+                    XtraMessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
                 }
+
             }
             else
             {
